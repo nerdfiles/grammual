@@ -1,0 +1,30 @@
+/***
+@usage
+  @include Line($startPoint..., $endPoint..., $length);
+***/
+@mixin Line ($sa: 0, $sb: 0, $sc: 0, $ea: 0, $eb: 0, $ec: 0, $length: 0) {
+  $newLength: $length / 2;
+
+  @for $i from 0 through $newLength {
+    $startPointX: $sa + $i;
+    $startPointY: $sb + $i;
+    $startPointZ: $sc + $i;
+    .p#{$i} {
+      @include Point($coords: $startPointX $startPointY $startPointZ);
+    }
+    @for $j from 0 through $newLength {
+      $endPointX: $ea - $j;
+      $endPointY: $eb - $j;
+      $endPointZ: $ec - $j;
+      .p#{$j} {
+        @include Point($coords: $endPointX $endPointY $endPointZ);
+      }
+    }
+  }
+}
+
+$startPointP: 0 0 0 5 5 5;
+
+.line {
+  @include Line($length: 20, $startPointP...);
+}

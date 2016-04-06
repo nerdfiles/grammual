@@ -1,0 +1,25 @@
+/***
+@inner
+***/
+@mixin _dot ($x: 0, $y: 0, $z: 0) {
+  transform: translateX($x) translateY($y) translateZ($z);
+}
+
+@mixin _surface ($unit: "px") {
+  min-width  : 1#{$unit};
+  min-height : 1#{$unit};
+  width      : 1#{$unit};
+  height     : 1#{$unit};
+  max-height : 1#{$unit};
+  max-width  : 1#{$unit};
+}
+
+
+/***
+@usage
+  @include Point($coords: 0 0 0);
+***/
+@mixin Point ($coords: 0 0 0, $space: "px") {
+  @include _dot($coords...);
+  @include _surface($unit: $space);
+}
