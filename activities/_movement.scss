@@ -1,14 +1,18 @@
-@mixin _speed () {
+@mixin _fwd () {
 }
-@mixin _forward () {
+@mixin _rev () {
 }
-@mixin _reverse () {
+@mixin _left () {
+}
+@mixin _right () {
 }
 @mixin _stop () {
 }
-@mixin Movement () {
-  @include _speed;
-  @include _forward;
-  @include _reverse;
-  @include _stop;
+@mixin _pivot ($instruction: "forward-right") {
+}
+@mixin Movement ($speed: 1, $navigationString: "fwd rev left right stop") {
+  $speed: 1;
+  @each $nav in $navigationString {
+    @include _#{$nav}($speed);
+  }
 }
