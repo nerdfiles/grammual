@@ -8,7 +8,7 @@ Grammuelle is a SASS minimalistic framework for building celluar designs (all pu
 
 ## Documentation
 
-See `./DOCS` or [Web docs](http://grammuelle.io/docs).
+See `./DOCS.md` or [Web docs](http://grammuelle.io/docs).
 
 ## Glossary
 
