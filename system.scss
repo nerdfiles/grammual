@@ -1,0 +1,142 @@
+/**(
+ * @fileOverview ./_system.scss
+ * )
+ */
+
+// @inner
+$__rules__: null;
+
+
+/*//////////////////////////////////////
+@cssdoc mixin
+@name Rules
+@description
+Print rules
+//////////////////////////////////////*/
+
+@mixin Rules ($name: null, $rules: null) {
+
+  @each $key, $value in $rules {
+
+    @if (type-of($value) == "map") {
+      @include Rule($key: $name, $value: $value) {
+        #{$key} {
+          span {
+            content: "#{$name}";
+            //first pass
+            @content;
+          }
+        };
+
+      }
+
+      $__rules__: $rules;
+    }
+
+    @if (type-of($key) == "string") {
+      @if (str-index($name, '_') == 1 or str-index($key, '_') == 1) {
+        @include define($key: $key) {
+          @content;
+        }
+      }
+    }
+  }
+
+  @if $rules == null {
+    @content;
+  }
+}
+
+
+/*//////////////////////////////////////
+@cssdoc mixin
+@name define
+@description
+Define placeholder
+//////////////////////////////////////*/
+
+@mixin define ($key) {
+  #{$key} {
+    @include Rules($name: "_cell", $rules: $__rules__) {
+      @content;
+    };
+  }
+}
+
+
+/*//////////////////////////////////////
+@cssdoc mixin
+@name Rule
+@description
+Define hover styles
+//////////////////////////////////////*/
+
+@mixin hover ($key, $value) {
+  &:hover {
+    @include Rules($value);
+  }
+}
+
+
+/*//////////////////////////////////////
+@cssdoc mixin
+@name Rule
+@description
+//////////////////////////////////////*/
+
+@mixin Rule ($key, $value) {
+
+  /***
+  @description
+  Print rule
+  ***/
+
+  @if (type-of($key) == 'string') {
+    #{$key} {
+      @each $i, $k in $value {
+        #{$i}: $k;
+      }
+    }
+    @content;
+  }
+}
+
+
+/*//////////////////////////////////////
+@cssdoc mixin
+@name class.area
+@description
+//////////////////////////////////////*/
+
+@include Rules('button', (
+  "[role='button']" : (
+    background   : #fff,
+    color        : #111,
+    padding      : 0.5em 1em,
+    border-width : 1px,
+  ),
+  "[aria-pressed]" : (
+    color : coral,
+  ),
+)) {
+  text-decoration: underline;
+};
+
+
+/*//////////////////////////////////////
+@cssdoc mixin
+@name Class
+@description
+//////////////////////////////////////*/
+
+@mixin Class ($bem, $args, $rule: null) {
+
+  @if $rule == null {
+    $rule: "#{$bem}";
+  }
+
+  #{$rule} {
+    @content;
+  }
+}
+

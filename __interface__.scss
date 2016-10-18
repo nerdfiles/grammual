@@ -1,0 +1,76 @@
+// @fileOverview ./_interface.scss
+
+@import "system";
+@import "__declarations__";
+@import "__responses__";
+@import "__templates__";
+
+:root {
+  @extend %banner;
+}
+
+.__module__ {
+  @include If($type: "form");
+}
+
+.__module__ {
+  @include Once($event: "anchor");
+}
+
+.__module__ {
+  @include Spread($event: "columns") {
+
+  }
+}
+
+.__grid__ {
+  @include Class($bem: "sidebar--deck__item", $args: null) {
+    align-self: stretch;
+  }
+}
+
+.__display__ {
+  @include With($layer: $templateBase) {
+    background: #121212;
+    @include With($layer: $templateOverride) {
+      background: yellow;
+    }
+  };
+}
+
+.__before__ {
+
+  @include Responses((
+    banner--sm,
+    banner--md,
+  )) {
+    background: blue;
+    color: pink;
+  };
+
+}
+
+.__after__ {
+
+  @include Responses((
+    banner--md,
+  )) {
+    background: red;
+  };
+
+}
+
+
+.__model__ {
+
+  header {
+    @include Responses((
+      banner--print,
+    )) {
+      background: green;
+    };
+  }
+
+}
+
+

@@ -31,6 +31,13 @@ $elemental: (
 
 $defaultActionBg: #777;
 
+
+/*//////////////////////////////////////
+@cssdoc mixin
+@name If
+@description
+//////////////////////////////////////*/
+
 @mixin If ($type: "div") {
   #{$type} {
     @include __component__(
@@ -42,11 +49,25 @@ $defaultActionBg: #777;
   }
 }
 
+
+/*//////////////////////////////////////
+@cssdoc mixin
+@name Once
+@description
+//////////////////////////////////////*/
+
 @mixin Once ($event: "anchor") {
   &:hover {  }
   &:active {  }
   &:focus {  }
 }
+
+
+/*//////////////////////////////////////
+@cssdoc mixin
+@name Spread
+@description
+//////////////////////////////////////*/
 
 @mixin Spread($event: "columns") {
   & {
@@ -60,8 +81,81 @@ $defaultActionBg: #777;
   }
 }
 
-@mixin Typemixer() {
-  & + p {
-    @content;
+
+/*//////////////////////////////////////
+@cssdoc mixin
+@name Schema
+@description
+//////////////////////////////////////*/
+
+@mixin With($layer: ()) {
+  @each $i, $k in $layer {
+    & {
+      #{$i}: $k;
+    }
+  }
+
+  @content;
+}
+
+
+/*//////////////////////////////////////
+@cssdoc mixin
+@name Schema
+@description
+//////////////////////////////////////*/
+
+@mixin Schema ($name: "") {
+
+  $smResp: "#{$name}--sm";
+  $mdResp: "#{$name}--md";
+  $reResp: "#{$name}--retina";
+  $prResp: "#{$name}--print";
+
+  %#{$name} {
+    @media (min-width: 801px) {
+      %#{$smResp} {
+        @content;
+      }
+    }
+    @media (min-width: 992px) {
+      %#{$mdResp} {
+        @content;
+      }
+    }
+    @media
+      only screen and (-webkit-min-device-pixel-ratio: 2),
+      only screen and (min--moz-device-pixel-ratio: 2),
+      only screen and (-o-min-device-pixel-ratio: 2/1),
+      only screen and (min-device-pixel-ratio: 2),
+      only screen and (min-resolution: 192dpi),
+      only screen and (min-resolution: 2dppx) {
+      %#{$reResp} {
+        @content;
+      }
+    }
+    @media only print {
+      %#{$prResp} {
+        @content
+      }
+    }
   }
 }
+
+
+/*//////////////////////////////////////
+@cssdoc mixin
+@name Responses
+@description
+//////////////////////////////////////*/
+
+@mixin Responses ($collection: ()) {
+  @each $el in $collection {
+    & {
+      @extend %#{$el};
+    }
+  }
+  @content;
+}
+
+
