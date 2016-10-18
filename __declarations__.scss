@@ -70,7 +70,7 @@ $panel: (
 // @description  
 // Stuff you'd like to do once.
 
-@mixin Once ($event: "anchor", $collection: ()) {
+@mixin Once ($model: "anchor", $collection: ()) {
   @each $k, $p in $collection {
     &:#{$k} {
       @each $j, $l in $p {
