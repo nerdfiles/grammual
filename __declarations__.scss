@@ -1,0 +1,17 @@
+// @fileOverview ./__declarations__.scss
+
+@import "__components__";
+
+
+$actionDirective: 'cancel-action';
+$defaultActionBg: #777;
+
+
+@mixin __declare__ ($type: "div") {
+  #{$type} {
+    @include __component__($actionType: $actionDirective) {
+      background: $defaultActionBg;
+    }
+  }
+}
+

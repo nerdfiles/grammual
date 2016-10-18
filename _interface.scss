@@ -1,17 +1,8 @@
-@import "__components__";
+// @fileOverview ./_interface.scss
 
-$actionDirective: 'cancel-action';
-$defaultActionBg: #777;
-
-@mixin __assert__ ($type: "div") {
-  #{$type} {
-    @include __component__($actionType: $actionDirective) {
-      background: $defaultActionBg;
-    }
-  }
-}
+@import "__declarations__";
 
 .__module__ {
-  @include __assert__($type: "form");
+  @include __declare__($type: "form");
 }
 
