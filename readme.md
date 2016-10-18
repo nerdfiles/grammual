@@ -15,13 +15,13 @@ Module-level interplay goes here, or meta-CSS type junk like:
 
 Generally the design ontology should be implemented within an __internal__:
 
-1. `Ifs`
-2. `Onces`
-3. `Spreads`
-4. `Classes`
-5. `Withs`
-6. `Responses`
-7. `Rules
+1. [`Ifs`](https://github.com/nerdfiles/grammuelle/blob/master/__interface__.scss#L34)
+2. [`Onces`](https://github.com/nerdfiles/grammuelle/blob/master/__interface__.scss#L38)
+3. [`Spreads`](https://github.com/nerdfiles/grammuelle/blob/master/__interface__.scss#L51)
+4. [`Classes`](https://github.com/nerdfiles/grammuelle/blob/master/__interface__.scss#L60)
+5. [`Withs`](https://github.com/nerdfiles/grammuelle/blob/master/__interface__.scss#L69)
+6. [`Responses`](https://github.com/nerdfiles/grammuelle/blob/master/__interface__.scss#L86)
+7. [`Rules`](https://github.com/nerdfiles/grammuelle/blob/master/__interface__.scss#L102)
 
 ## Install
 
