@@ -20,6 +20,11 @@
 }
 
 
+// @cssdoc mixin  
+// @name Then  
+// @description  
+// The usual.
+
 @mixin Then ($type: "alert") {
   #{$type} {
     @include __component__(
@@ -28,6 +33,17 @@
     )
   }
 }
+
+
+// @cssdoc mixin  
+// @name Then  
+// @description  
+// The usual.
+
+@mixin Finally () {
+  // @notimplemented
+}
+
 
 // @cssdoc mixin  
 // @name Once  

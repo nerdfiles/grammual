@@ -5,6 +5,22 @@ $__rules__: null;
 
 
 // @cssdoc mixin
+// @name Class
+// @description
+
+@mixin Class ($bem, $args, $rule: null) {
+
+  @if $rule == null {
+    $rule: "#{$bem}";
+  }
+
+  #{$rule} {
+    @content;
+  }
+}
+
+
+// @cssdoc mixin
 // @name Rules
 // @description
 // Print rules
@@ -50,6 +66,28 @@ $__rules__: null;
 
 
 // @cssdoc mixin
+// @name Rule
+// @description
+
+@mixin Rule ($key, $value) {
+
+  /***
+  @description
+  Print rule
+  ***/
+
+  @if (type-of($key) == 'string') {
+    #{$key} {
+      @each $i, $k in $value {
+        #{$i}: $k;
+      }
+    }
+    @content;
+  }
+}
+
+
+// @cssdoc mixin
 // @name define
 // @description
 // Define placeholder
@@ -77,44 +115,6 @@ $__rules__: null;
 @mixin hover ($value) {
   &:hover {
     @include Rules($value);
-  }
-}
-
-
-// @cssdoc mixin
-// @name Rule
-// @description
-
-@mixin Rule ($key, $value) {
-
-  /***
-  @description
-  Print rule
-  ***/
-
-  @if (type-of($key) == 'string') {
-    #{$key} {
-      @each $i, $k in $value {
-        #{$i}: $k;
-      }
-    }
-    @content;
-  }
-}
-
-
-// @cssdoc mixin
-// @name Class
-// @description
-
-@mixin Class ($bem, $args, $rule: null) {
-
-  @if $rule == null {
-    $rule: "#{$bem}";
-  }
-
-  #{$rule} {
-    @content;
   }
 }
 
