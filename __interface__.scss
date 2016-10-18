@@ -14,13 +14,15 @@
 // 5. `Withs`  
 // 6. `Responses`  
 // 7. `Rules`  
+// 8. `Wraps`  
 
 
+@import "__templates__";
 @import "__system__";
 @import "__components__";
-@import "__templates__";
 @import "__declarations__";
 @import "__responses__";
+
 
 // @cssdoc layout  
 // @description  
@@ -94,6 +96,14 @@
     };
   }
 }
+
+
+// @cssdoc include  
+// @name a  
+// @description  
+// Set up an anchor (This is an implementation example.)
+
+a { @include Wrap($anchorRulesBefore, $anchorRulesAfter, $mirrorContent: "."); }
 
 
 // @cssdoc include  

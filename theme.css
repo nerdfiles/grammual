@@ -1129,6 +1129,11 @@
 .__model__ header {
   background: green; }
 
+a::before {
+  content: "."; }
+a::after {
+  content: "."; }
+
 button {
   background: #fff;
   color: #111;

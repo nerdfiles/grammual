@@ -21,6 +21,20 @@ $__rules__: null;
 
 
 // @cssdoc mixin  
+// @name define  
+// @description  
+// Define placeholder.
+
+@mixin Define ($key) {
+  #{$key} {
+    @include Rules($name: "_cell", $rules: $__rules__) {
+      @content;
+    };
+  }
+}
+
+
+// @cssdoc mixin  
 // @name Rules  
 // @description  
 // Print rules
@@ -52,7 +66,7 @@ $__rules__: null;
 
     @if (type-of($key) == "string") {
       @if (str-index($name, '_') == 1 or str-index($key, '_') == 1) {
-        @include define($key: $key) {
+        @include Define($key: $key) {
           @content;
         }
       }
@@ -84,29 +98,27 @@ $__rules__: null;
 
 
 // @cssdoc mixin  
-// @name define  
+// @name Wrap  
 // @description  
-// Define placeholder.
-
-@mixin define ($key) {
-  #{$key} {
-    @include Rules($name: "_cell", $rules: $__rules__) {
-      @content;
-    };
-  }
-}
-
-
-// @cssdoc mixin  
-// @name hover  
-// @description  
-// Define hover styles.  
+// Define wrap styles.  
 // @usage  
-//   a { @include hover($value: (background: $bgColor,)) }
+//   a { @include Wrap($rulesBefore, $rulesAfter); }
 
-@mixin hover ($value) {
-  &:hover {
-    @include Rules($value);
+@mixin Wrap ($rulesBefore, $rulesAfter, $mirrorContent) {
+  &::before {
+    @include Rules($rulesBefore) {
+      @if type-of($mirrorContent) == 'string' {
+        content: "#{$mirrorContent}";
+      }
+    }
+  }
+  &::after {
+    @include Rules($rulesAfter) {
+      @if type-of($mirrorContent) == 'string' {
+        content: "#{$mirrorContent}";
+      }
+    }
   }
 }
+
 
