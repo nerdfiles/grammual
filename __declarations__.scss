@@ -6,8 +6,7 @@
 $actionDirective: 'cancel-action';
 $defaultActionBg: #777;
 
-
-@mixin __declare__ ($type: "div") {
+@mixin If ($type: "div") {
   #{$type} {
     @include __component__($actionType: $actionDirective) {
       background: $defaultActionBg;

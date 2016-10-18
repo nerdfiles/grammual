@@ -3,6 +3,6 @@
 @import "__declarations__";
 
 .__module__ {
-  @include __declare__($type: "form");
+  @include If($type: "form");
 }
 
