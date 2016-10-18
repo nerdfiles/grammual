@@ -16,13 +16,13 @@ $templateOverride: (
 );
 
 $onceExample: (
-  hover:  {
-    color: skyblue;
-  },
-  active: {
-    color: purple;
-  },
-  focus:  {
-    color: teal;
-  },
+  hover:  (
+    color: skyblue,
+  ),
+  active: (
+    color: purple,
+  ),
+  focus:  (
+    color: teal,
+  ),
 )

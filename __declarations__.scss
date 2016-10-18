@@ -73,7 +73,9 @@ $panel: (
 @mixin Once ($event: "anchor", $collection: ()) {
   @each $k, $p in $collection {
     &:#{$k} {
-      $p
+      @each $j, $l in $p {
+        #{$j}: #{$l}
+      }
     }
   }
 }
