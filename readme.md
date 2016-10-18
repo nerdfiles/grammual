@@ -17,10 +17,10 @@ Generally the design ontology should be implemented within an __internal__:
 
 1. [`Ifs`](https://github.com/nerdfiles/grammuelle/blob/master/__interface__.scss#L34)
 2. [`Onces`](https://github.com/nerdfiles/grammuelle/blob/master/__interface__.scss#L38)
-3. [`Spreads`](https://github.com/nerdfiles/grammuelle/blob/master/__interface__.scss#L51)
-4. [`Classes`](https://github.com/nerdfiles/grammuelle/blob/master/__interface__.scss#L60)
-5. [`Withs`](https://github.com/nerdfiles/grammuelle/blob/master/__interface__.scss#L69)
-6. [`Responses`](https://github.com/nerdfiles/grammuelle/blob/master/__interface__.scss#L86)
+3. [`Spreads`](https://github.com/nerdfiles/grammuelle/blob/master/__interface__.scss#L45)
+4. [`Classes`](https://github.com/nerdfiles/grammuelle/blob/master/__interface__.scss#L51)
+5. [`Withs`](https://github.com/nerdfiles/grammuelle/blob/master/__interface__.scss#L60)
+6. [`Responses`](https://github.com/nerdfiles/grammuelle/blob/master/__interface__.scss#L69)
 7. [`Rules`](https://github.com/nerdfiles/grammuelle/blob/master/__interface__.scss#L102)
 
 ## Install
