@@ -1,0 +1,13 @@
+{
+  "name": "grammuelle",
+  "homepage": "https://github.com/nerdfiles/grammuelle",
+  "authors": [
+    "nerdfiles <nerdfiles@gmail.com>"
+  ],
+  "description": "A Grammacology of Design: Grammuelle is a SASS minimalistic framework for building cellular designs (all puns intented).",
+  "main": "theme.scss",
+  "keywords": [
+    "scss"
+  ],
+  "license": "WTFPL"
+}
