@@ -23,6 +23,12 @@ $fieldInput: (
   ),
 );
 
+$elemental: (
+  member: (
+    width: 33%,
+  ),
+);
+
 $defaultActionBg: #777;
 
 @mixin If ($type: "div") {
@@ -36,3 +42,26 @@ $defaultActionBg: #777;
   }
 }
 
+@mixin Once ($event: "anchor") {
+  &:hover {  }
+  &:active {  }
+  &:focus {  }
+}
+
+@mixin Spread($event: "columns") {
+  & {
+    display: flex;
+  }
+
+  @each $prop, $val in $elemental {
+    @each $p, $v in $val {
+       #{$prop}: $v;
+    }
+  }
+}
+
+@mixin Typemixer() {
+  & + p {
+    @content;
+  }
+}

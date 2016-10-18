@@ -1,8 +1,0 @@
-// @fileOverview ./_interface.scss
-
-@import "__declarations__";
-
-.__module__ {
-  @include If($type: "form");
-}
-
