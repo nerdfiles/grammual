@@ -1,8 +1,8 @@
 // @fileOverview ./__components__.scss
 
-@mixin __component__ ($actionType) {
+@mixin __component__ ($operation) {
 
-  [#{$actionType}] {
+  [capabillity="#{$operation}"] {
     @content;
   }
 
@@ -18,9 +18,9 @@
         color: #fff,
       )
     ),
-    content: (
+    #{$operation}: (
       (
-        $actionType,
+        color: red,
       )
     ),
   );

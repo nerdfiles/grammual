@@ -1,0 +1,9 @@
+.__module__ form [capabillity="cancel"] {
+  background: #777; }
+.__module__ form [role] {
+  outline: 1px solid gold; }
+.__module__ form [rel] {
+  background: limegreen;
+  color: #fff; }
+.__module__ form [cancel] {
+  color: red; }

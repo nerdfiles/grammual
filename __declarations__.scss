@@ -3,12 +3,12 @@
 @import "__components__";
 
 
-$actionDirective: 'cancel-action';
+$actionDirective: 'cancel';
 $defaultActionBg: #777;
 
 @mixin If ($type: "div") {
   #{$type} {
-    @include __component__($actionType: $actionDirective) {
+    @include __component__($operation: $actionDirective) {
       background: $defaultActionBg;
     }
   }
