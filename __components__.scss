@@ -1,29 +1,10 @@
 // @fileOverview ./__components__.scss
 
-@mixin __component__ ($operation) {
+@mixin __component__ ($operation, $buttons) {
 
   [capabillity="#{$operation}"] {
     @content;
   }
-
-  $buttons: (
-    role: (
-      (
-        outline: 1px solid gold,
-      )
-    ),
-    rel: (
-      (
-        background: limegreen,
-        color: #fff,
-      )
-    ),
-    #{$operation}: (
-      (
-        color: red,
-      )
-    ),
-  );
 
   @each $btn, $bg in $buttons {
     [#{$btn}] {

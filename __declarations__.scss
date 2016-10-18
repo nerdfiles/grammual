@@ -2,13 +2,35 @@
 
 @import "__components__";
 
+$operation: 'cancel';
 
-$actionDirective: 'cancel';
+$fieldInput: (
+  role: (
+    (
+      outline: 1px solid gold,
+    )
+  ),
+  rel: (
+    (
+      background: limegreen,
+      color: #fff,
+    )
+  ),
+  #{$operation}: (
+    (
+      color: red,
+    )
+  ),
+);
+
 $defaultActionBg: #777;
 
 @mixin If ($type: "div") {
   #{$type} {
-    @include __component__($operation: $actionDirective) {
+    @include __component__(
+      $operation : $operation,
+      $buttons   : $fieldInput
+    ) {
       background: $defaultActionBg;
     }
   }
