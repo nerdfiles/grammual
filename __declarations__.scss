@@ -1,7 +1,5 @@
 // @fileOverview ./__declarations__.scss
 
-@import "__components__";
-
 $operation: 'cancel';
 
 $fieldInput: (
@@ -23,7 +21,7 @@ $fieldInput: (
   ),
 );
 
-$elemental: (
+$panel: (
   member: (
     width: 33%,
   ),
@@ -69,14 +67,19 @@ $defaultActionBg: #777;
 @description
 //////////////////////////////////////*/
 
-@mixin Spread($event: "columns") {
+@mixin Spread($event: "__column__") {
   & {
     display: flex;
-  }
 
-  @each $prop, $val in $elemental {
-    @each $p, $v in $val {
-       #{$prop}: $v;
+    @each $prop, $val in $panel {
+      .#{$event} {
+        @each $p, $v in $val {
+          #{$prop} {
+            $p: $v;
+          }
+        }
+        @content;
+      }
     }
   }
 }

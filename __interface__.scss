@@ -1,9 +1,16 @@
 // @fileOverview ./_interface.scss
 
 @import "system";
+@import "__components__";
 @import "__declarations__";
 @import "__responses__";
 @import "__templates__";
+
+/*//////////////////////////////////////
+@cssdoc layout
+@description
+Layout.
+//////////////////////////////////////*/
 
 :root {
   @extend %banner;
@@ -18,8 +25,8 @@
 }
 
 .__module__ {
-  @include Spread($event: "columns") {
-
+  @include Spread($event: "__column__") {
+    text-align: right;
   }
 }
 
@@ -39,7 +46,6 @@
 }
 
 .__before__ {
-
   @include Responses((
     banner--sm,
     banner--md,
@@ -47,22 +53,17 @@
     background: blue;
     color: pink;
   };
-
 }
 
 .__after__ {
-
   @include Responses((
     banner--md,
   )) {
     background: red;
   };
-
 }
 
-
 .__model__ {
-
   header {
     @include Responses((
       banner--print,
@@ -70,7 +71,27 @@
       background: green;
     };
   }
-
 }
 
+
+/*//////////////////////////////////////
+@cssdoc @include
+@name button
+@description
+Set up button.
+//////////////////////////////////////*/
+
+@include Rules('button', (
+  "[role='button']" : (
+    background   : #fff,
+    color        : #111,
+    padding      : 0.5em 1em,
+    border-width : 1px,
+  ),
+  "[aria-pressed]" : (
+    color : coral,
+  ),
+)) {
+  text-decoration: underline;
+};
 

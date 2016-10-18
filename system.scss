@@ -14,7 +14,7 @@ $__rules__: null;
 Print rules
 //////////////////////////////////////*/
 
-@mixin Rules ($name: null, $rules: null) {
+@mixin Rules ($name: null, $rules: null, $icon: "\f095", $font-family: FontAwesome) {
 
   @each $key, $value in $rules {
 
@@ -22,7 +22,13 @@ Print rules
       @include Rule($key: $name, $value: $value) {
         #{$key} {
           span {
-            content: "#{$name}";
+            @if type-of($icon) == 'string' {
+              &:before {
+                font-family: $font-family;
+                content: $icon;
+              }
+            }
+            //content: "#{$name}";
             //first pass
             @content;
           }
@@ -106,27 +112,6 @@ Define hover styles
     @content;
   }
 }
-
-
-/*//////////////////////////////////////
-@cssdoc mixin
-@name class.area
-@description
-//////////////////////////////////////*/
-
-@include Rules('button', (
-  "[role='button']" : (
-    background   : #fff,
-    color        : #111,
-    padding      : 0.5em 1em,
-    border-width : 1px,
-  ),
-  "[aria-pressed]" : (
-    color : coral,
-  ),
-)) {
-  text-decoration: underline;
-};
 
 
 /*//////////////////////////////////////
