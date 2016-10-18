@@ -1,5 +1,9 @@
+// @fileOverview ./base.scss
+
 // === Abstract Objects ==================================================== //
+@import "abstract/objects/_point";
 @import "abstract/objects/_dimensions";
+@import "abstract/objects/_line";
 
 // === Abstract Structures ================================================= //
 @import "abstract/structures/_formal-structures";
