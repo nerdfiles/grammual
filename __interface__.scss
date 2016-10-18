@@ -18,9 +18,9 @@
 
 @import "__system__";
 @import "__components__";
+@import "__templates__";
 @import "__declarations__";
 @import "__responses__";
-@import "__templates__";
 
 // @cssdoc layout  
 // @description  
@@ -31,7 +31,9 @@
 }
 
 .__module__ {
-  @include If($type: "form");
+  @include If($type: "form") {
+    @include Then($type: "modal");
+  };
 }
 
 .__module__ {

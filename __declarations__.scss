@@ -2,52 +2,6 @@
 // @description  
 // Declarative CSS à la (https://www.researchgate.net/publication/279039852_A_CSS_integration_model_for_declarative_3D).
 
-
-// @TODO Color palettes.
-$defaultActionBg: #777;
-
-
-// @TODO Operation spaces.
-$operation: 'cancel';
-
-
-// @bemClass .field--input  
-// @description  
-// 1. role
-// 2. rel
-// 3. `operation`
-
-$fieldInput: (
-  role: (
-    (
-      outline: 1px solid gold,
-    )
-  ),
-  rel: (
-    (
-      background: limegreen,
-      color: #fff,
-    )
-  ),
-  #{$operation}: (
-    (
-      color: red,
-    )
-  ),
-);
-
-
-// @bemClass .panel (implied)  
-// @description  
-// Triple column stage.
-
-$panel: (
-  member: (
-    width: 33%,
-  ),
-);
-
-
 // @cssdoc mixin  
 // @name If  
 // @description  
@@ -62,8 +16,18 @@ $panel: (
       background: $defaultActionBg;
     }
   }
+  @content;
 }
 
+
+@mixin Then ($type: "alert") {
+  #{$type} {
+    @include __component__(
+      $operation  : $operationModal,
+      $components : $fieldInput
+    )
+  }
+}
 
 // @cssdoc mixin  
 // @name Once  

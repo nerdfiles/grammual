@@ -1086,6 +1086,13 @@
   color: #fff; }
 .__module__ form [cancel] {
   color: red; }
+.__module__ modal [role] {
+  outline: 1px solid gold; }
+.__module__ modal [rel] {
+  background: limegreen;
+  color: #fff; }
+.__module__ modal [cancel] {
+  color: red; }
 
 .__module__ a:hover {
   color: skyblue; }

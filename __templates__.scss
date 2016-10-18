@@ -25,4 +25,52 @@ $onceExample: (
   focus:  (
     color: teal,
   ),
-)
+);
+
+// @TODO Color palettes.
+$defaultActionBg: #777;
+
+
+// @TODO Operation spaces.
+$operation: 'cancel';
+$operationModal: 'modal';
+
+
+// @bemClass .field--input  
+// @description  
+// 1. role
+// 2. rel
+// 3. `operation`
+
+$fieldInput: (
+  role: (
+    (
+      outline: 1px solid gold,
+    )
+  ),
+  rel: (
+    (
+      background: limegreen,
+      color: #fff,
+    )
+  ),
+  #{$operation}: (
+    (
+      color: red,
+    )
+  ),
+);
+
+
+// @bemClass .panel (implied)  
+// @description  
+// Triple column stage.
+
+$panel: (
+  member: (
+    width: 33%,
+  ),
+);
+
+
+
