@@ -1,23 +1,7 @@
-// @fileOverview ./base.scss
+// @fileOverview ./theme.scss
 
-// === Abstract Objects ==================================================== //
-@import "abstract/objects/_point";
-@import "abstract/objects/_dimensions";
-@import "abstract/objects/_line";
+// @implements __basics__
+@import "__basics__";
 
-// === Abstract Structures ================================================= //
-@import "abstract/structures/_formal-structures";
-
-// === Concrete Objects ==================================================== //
-@import "concrete/objects/_color";
-
-// === Concrete Structures ================================================= //
-@import "concrete/structures/_texture";
-
-// === Activities ========================================================== //
-@import "activities/_repetition";
-
-// === Relations =========================================================== //
-@import "relations/_amount";
-
+// @implements __interface__
 @import "__interface__";

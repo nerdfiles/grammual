@@ -1,0 +1,20 @@
+
+// === Abstract Objects ==================================================== //
+@import "abstract/objects/_point";
+@import "abstract/objects/_dimensions";
+@import "abstract/objects/_line";
+
+// === Abstract Structures ================================================= //
+@import "abstract/structures/_formal-structures";
+
+// === Concrete Objects ==================================================== //
+@import "concrete/objects/_color";
+
+// === Concrete Structures ================================================= //
+@import "concrete/structures/_texture";
+
+// === Activities ========================================================== //
+@import "activities/_repetition";
+
+// === Relations =========================================================== //
+@import "relations/_amount";

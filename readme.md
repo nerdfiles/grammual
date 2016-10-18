@@ -12,6 +12,7 @@ Module-level interplay goes here, or meta-CSS type junk like:
 3. `displays`
 4. `hooks` (`before`, `after` order serializations)
 5. `models`
+6. `basics`
 
 Generally the design ontology should be implemented within an __internal__:
 
