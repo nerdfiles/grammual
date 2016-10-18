@@ -1,0 +1,156 @@
+@charset "UTF-8";
+/**(
+ * @fileOverview ./_system.scss
+ * )
+ */
+/*//////////////////////////////////////
+@cssdoc mixin
+@name Rules
+@description
+Print rules
+//////////////////////////////////////*/
+/*//////////////////////////////////////
+@cssdoc mixin
+@name define
+@description
+Define placeholder
+//////////////////////////////////////*/
+/*//////////////////////////////////////
+@cssdoc mixin
+@name Rule
+@description
+Define hover styles
+@usage
+  a {
+    @include hover($value: (
+      background: $bgColor,
+    ))
+  }
+//////////////////////////////////////*/
+/*//////////////////////////////////////
+@cssdoc mixin
+@name Rule
+@description
+//////////////////////////////////////*/
+/*//////////////////////////////////////
+@cssdoc mixin
+@name Class
+@description
+//////////////////////////////////////*/
+/*//////////////////////////////////////
+@cssdoc mixin
+@name If
+@description
+//////////////////////////////////////*/
+/*//////////////////////////////////////
+@cssdoc mixin
+@name Once
+@description
+//////////////////////////////////////*/
+/*//////////////////////////////////////
+@cssdoc mixin
+@name Spread
+@description
+//////////////////////////////////////*/
+/*//////////////////////////////////////
+@cssdoc mixin
+@name Schema
+@description
+//////////////////////////////////////*/
+/*//////////////////////////////////////
+@cssdoc mixin
+@name Schema
+@description
+//////////////////////////////////////*/
+/*//////////////////////////////////////
+@cssdoc mixin
+@name Responses
+@description
+//////////////////////////////////////*/
+@media (min-width: 801px) {
+  :root .__before__ {
+    color: orange; } }
+@media (min-width: 992px) {
+  :root .__before__, :root .__after__ {
+    color: orange; } }
+@media only print {
+  :root .__model__ header {
+    color: orange; } }
+
+/*//////////////////////////////////////
+@cssdoc layout
+@description
+Layout.
+//////////////////////////////////////*/
+.__module__ form [capabillity="cancel"] {
+  background: #777; }
+.__module__ form [role] {
+  outline: 1px solid gold; }
+.__module__ form [rel] {
+  background: limegreen;
+  color: #fff; }
+.__module__ form [cancel] {
+  color: red; }
+
+.__module__ {
+  display: flex; }
+  .__module__ .__column__ {
+    text-align: right; }
+
+.__grid__ sidebar--deck__item {
+  align-self: stretch; }
+
+.__display__ {
+  background: #121212;
+  background: yellow; }
+  .__display__ {
+    display: inline; }
+  .__display__ {
+    display: flex; }
+  .__display__ {
+    justify-content: flex-end; }
+
+.__before__ {
+  background: blue;
+  color: pink; }
+
+.__after__ {
+  background: red; }
+
+.__model__ header {
+  background: green; }
+
+/*//////////////////////////////////////
+@cssdoc @include
+@name button
+@description
+Set up button.
+//////////////////////////////////////*/
+/***
+@description
+Print rule
+***/
+button {
+  background: #fff;
+  color: #111;
+  padding: 0.5em 1em;
+  border-width: 1px; }
+
+[role='button'] span {
+  text-decoration: underline; }
+  [role='button'] span:before {
+    font-family: FontAwesome;
+    content: ""; }
+
+/***
+@description
+Print rule
+***/
+button {
+  color: coral; }
+
+[aria-pressed] span {
+  text-decoration: underline; }
+  [aria-pressed] span:before {
+    font-family: FontAwesome;
+    content: ""; }
