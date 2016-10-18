@@ -69,9 +69,15 @@ Define placeholder
 @name Rule
 @description
 Define hover styles
+@usage
+  a {
+    @include hover($value: (
+      background: $bgColor,
+    ))
+  }
 //////////////////////////////////////*/
 
-@mixin hover ($key, $value) {
+@mixin hover ($value) {
   &:hover {
     @include Rules($value);
   }
