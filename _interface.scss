@@ -1,0 +1,17 @@
+@import "__components__";
+
+$actionDirective: 'cancel-action';
+$defaultActionBg: #777;
+
+@mixin __assert__ ($type: "div") {
+  #{$type} {
+    @include __component__($actionType: $actionDirective) {
+      background: $defaultActionBg;
+    }
+  }
+}
+
+.__module__ {
+  @include __assert__($type: "form");
+}
+

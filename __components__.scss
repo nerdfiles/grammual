@@ -1,0 +1,35 @@
+@mixin __component__ ($actionType) {
+
+  [#{$actionType}] {
+    @content;
+  }
+
+  $buttons: (
+    role: (
+      (
+        outline: 1px solid gold,
+      )
+    ),
+    rel: (
+      (
+        background: limegreen,
+        color: #fff,
+      )
+    ),
+    content: (
+      (
+        $actionType,
+      )
+    ),
+  );
+
+  @each $btn, $bg in $buttons {
+    [#{$btn}] {
+      @each $prop, $item in $bg {
+        #{$prop}: $item;
+      }
+    }
+  }
+}
+
+
