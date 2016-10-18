@@ -102,7 +102,7 @@ $__rules__: null;
 // @description  
 // Define wrap styles.  
 // @usage  
-//   a { @include Wrap($rulesBefore, $rulesAfter); }
+//   a { @include Wrap($rulesBefore, $rulesAfter, $mirrorContent: "."); }
 
 @mixin Wrap ($rulesBefore, $rulesAfter, $mirrorContent) {
   &::before {
