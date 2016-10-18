@@ -15,16 +15,20 @@ your grids, modules, hooks, responses, etc., `import` your interface:
 
 ## Documentation
 
-See `./DOCS.md` or [Web docs](http://grammuelle.io/docs).
+See `./DOCS` or [Web docs](http://grammuelle.io/docs).
 
 ## Glossary
 
-See `./GLOSSARY.md`
+See `./GLOSSARY`
+
+## Idioms
+
+See `./IDIOMS`
 
 ## Contribute
 
-See `./CONTRIBUTE.md`
+See `./CONTRIBUTE`
 
 ## License
 
-See `./LICENSE.md`
+See `./LICENSE`
