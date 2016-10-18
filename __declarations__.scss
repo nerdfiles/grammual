@@ -1,6 +1,21 @@
-// @fileOverview ./__declarations__.scss
+// @fileOverview ./__declarations__.scss  
+// @description  
+// Declarative CSS à la (https://www.researchgate.net/publication/279039852_A_CSS_integration_model_for_declarative_3D).
 
+
+// @TODO Color palettes.
+$defaultActionBg: #777;
+
+
+// @TODO Operation spaces.
 $operation: 'cancel';
+
+
+// @bemClass .field--input  
+// @description  
+// 1. role
+// 2. rel
+// 3. `operation`
 
 $fieldInput: (
   role: (
@@ -21,20 +36,22 @@ $fieldInput: (
   ),
 );
 
+
+// @bemClass .panel (implied)  
+// @description  
+// Triple column stage.
+
 $panel: (
   member: (
     width: 33%,
   ),
 );
 
-$defaultActionBg: #777;
 
-
-/*//////////////////////////////////////
-@cssdoc mixin
-@name If
-@description
-//////////////////////////////////////*/
+// @cssdoc mixin  
+// @name If  
+// @description  
+// Declarative lest conditional.
 
 @mixin If ($type: "div") {
   #{$type} {
@@ -48,24 +65,26 @@ $defaultActionBg: #777;
 }
 
 
-/*//////////////////////////////////////
-@cssdoc mixin
-@name Once
-@description
-//////////////////////////////////////*/
+// @cssdoc mixin  
+// @name Once  
+// @description  
+// Stuff you'd like to do once.
 
-@mixin Once ($event: "anchor") {
-  &:hover {  }
-  &:active {  }
-  &:focus {  }
+@mixin Once ($event: "anchor", $collection: ()) {
+  @each $k, $p in $collection {
+    &:#{$k} {
+      $p
+    }
+  }
 }
 
 
-/*//////////////////////////////////////
-@cssdoc mixin
-@name Spread
-@description
-//////////////////////////////////////*/
+// @cssdoc mixin  
+// @name Spread  
+// @description  
+// Spreads are typically for columnar setups, but you can easily set up grid 
+// logic if you need.  
+// @TODO Constraint-based Classes; e.g. Class() { Spread() {} /* @extend .__column__ by Class? */ }
 
 @mixin Spread($event: "__column__") {
   & {
@@ -85,11 +104,10 @@ $defaultActionBg: #777;
 }
 
 
-/*//////////////////////////////////////
-@cssdoc mixin
-@name Schema
-@description
-//////////////////////////////////////*/
+// @cssdoc mixin  
+// @name With  
+// @description  
+// Haha, we implemented a JS bug.
 
 @mixin With($layer: ()) {
   @each $i, $k in $layer {
@@ -102,11 +120,10 @@ $defaultActionBg: #777;
 }
 
 
-/*//////////////////////////////////////
-@cssdoc mixin
-@name Schema
-@description
-//////////////////////////////////////*/
+// @cssdoc mixin  
+// @name Schema  
+// @description  
+// ¯\(°_o)/¯ 
 
 @mixin Schema ($name: "") {
 
@@ -146,11 +163,10 @@ $defaultActionBg: #777;
 }
 
 
-/*//////////////////////////////////////
-@cssdoc mixin
-@name Responses
-@description
-//////////////////////////////////////*/
+// @cssdoc mixin  
+// @name Responses  
+// @description  
+// Optionally same extenders.
 
 @mixin Responses ($collection: ()) {
   @each $el in $collection {

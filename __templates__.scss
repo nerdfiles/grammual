@@ -14,3 +14,15 @@ $templateOverride: (
   display: flex,
   justify-content: flex-end,
 );
+
+$onceExample: (
+  hover:  {
+    color: skyblue;
+  },
+  active: {
+    color: purple;
+  },
+  focus:  {
+    color: teal;
+  },
+)

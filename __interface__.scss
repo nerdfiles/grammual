@@ -35,7 +35,10 @@
 }
 
 .__module__ {
-  @include Once($event: "anchor");
+  @include Once(
+    $event: "anchor",
+    $collection: $onceExample
+  );
 }
 
 .__module__ {
