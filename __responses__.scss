@@ -1,5 +1,14 @@
-// @fileOverview ./__responses__.scss
+// @fileOverview ./__responses__.scss  
+// @description
+// Responses are Schemas which enable developers to plan layers of web pages.
 
+// @cssdoc  
+// @name banner  
+// @description  
+// This could really be anything, or think of a $bemClass. The idea is that 
+// you can construct your thematic media query as a schemation of responses.  
+// @usage  
+//   @include Schema($name: $bemClass) { /* ... */ }
 @include Schema ($name: "banner") {
   color: orange;
 }

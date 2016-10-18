@@ -1,4 +1,20 @@
-// @fileOverview ./__interface__.scss
+// @fileOverview ./__interface__.scss  
+// @description  
+// Module-level interplay goes here, or meta-CSS type junk like:  
+// 1. `modules`  
+// 2. `grids`  
+// 3. `displays`  
+// 4. `hooks` (`before`, `after` order serializations)  
+// 5. `models`  
+// Generally the design ontology should be implemented within an __internal__:  
+// 1. `Ifs`  
+// 2. `Onces`  
+// 3. `Spreads`  
+// 4. `Classes`  
+// 5. `Withs`  
+// 6. `Responses`  
+// 7. `Rules`  
+
 
 @import "__system__";
 @import "__components__";
@@ -6,11 +22,9 @@
 @import "__responses__";
 @import "__templates__";
 
-/*//////////////////////////////////////
-@cssdoc layout
-@description
-Layout.
-//////////////////////////////////////*/
+// @cssdoc layout  
+// @description  
+// Layout. DOUAWTF.
 
 :root {
   @extend %banner;
@@ -74,12 +88,10 @@ Layout.
 }
 
 
-/*//////////////////////////////////////
-@cssdoc @include
-@name button
-@description
-Set up button.
-//////////////////////////////////////*/
+// @cssdoc include  
+// @name button  
+// @description  
+// Set up a button. (This is an implementation example.)
 
 @include Rules('button', (
   "[role='button']" : (

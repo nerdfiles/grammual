@@ -1,7 +1,27 @@
 # Grammuelle
 
-A Grammacology of Design: Grammuelle is a SASS minimalistic framework for 
+A Grammacology of Design: Grammuelle is a SASS minimalistic framework for  
 building cellular designs (all puns intented).
+
+## Example
+
+Module-level interplay goes here, or meta-CSS type junk like:
+
+1. `modules`
+2. `grids`
+3. `displays`
+4. `hooks` (`before`, `after` order serializations)
+5. `models`
+
+Generally the design ontology should be implemented within an __internal__:
+
+1. `Ifs`
+2. `Onces`
+3. `Spreads`
+4. `Classes`
+5. `Withs`
+6. `Responses`
+7. `Rules
 
 ## Install
 

@@ -1,18 +1,13 @@
-/**(
- * @fileOverview ./__system__.scss
- * )
- */
+// @fileOverview ./__system__.scss
 
 // @inner
 $__rules__: null;
 
 
-/*//////////////////////////////////////
-@cssdoc mixin
-@name Rules
-@description
-Print rules
-//////////////////////////////////////*/
+// @cssdoc mixin
+// @name Rules
+// @description
+// Print rules
 
 @mixin Rules ($name: null, $rules: null, $icon: "\f095", $font-family: FontAwesome) {
 
@@ -54,12 +49,10 @@ Print rules
 }
 
 
-/*//////////////////////////////////////
-@cssdoc mixin
-@name define
-@description
-Define placeholder
-//////////////////////////////////////*/
+// @cssdoc mixin
+// @name define
+// @description
+// Define placeholder
 
 @mixin define ($key) {
   #{$key} {
@@ -70,18 +63,16 @@ Define placeholder
 }
 
 
-/*//////////////////////////////////////
-@cssdoc mixin
-@name Rule
-@description
-Define hover styles
-@usage
-  a {
-    @include hover($value: (
-      background: $bgColor,
-    ))
-  }
-//////////////////////////////////////*/
+// @cssdoc mixin
+// @name hover
+// @description
+// Define hover styles
+// @usage
+//   a {
+//     @include hover($value: (
+//       background: $bgColor,
+//     ))
+//   }
 
 @mixin hover ($value) {
   &:hover {
@@ -90,11 +81,9 @@ Define hover styles
 }
 
 
-/*//////////////////////////////////////
-@cssdoc mixin
-@name Rule
-@description
-//////////////////////////////////////*/
+// @cssdoc mixin
+// @name Rule
+// @description
 
 @mixin Rule ($key, $value) {
 
@@ -114,11 +103,9 @@ Define hover styles
 }
 
 
-/*//////////////////////////////////////
-@cssdoc mixin
-@name Class
-@description
-//////////////////////////////////////*/
+// @cssdoc mixin
+// @name Class
+// @description
 
 @mixin Class ($bem, $args, $rule: null) {
 
