@@ -39,8 +39,8 @@ $defaultActionBg: #777;
 @mixin If ($type: "div") {
   #{$type} {
     @include __component__(
-      $operation : $operation,
-      $buttons   : $fieldInput
+      $operation  : $operation,
+      $components : $fieldInput
     ) {
       background: $defaultActionBg;
     }

@@ -1,13 +1,13 @@
 // @fileOverview ./__components__.scss
 
-@mixin __component__ ($operation, $buttons) {
+@mixin __component__ ($operation, $components) {
 
   [capabillity="#{$operation}"] {
     @content;
   }
 
-  @each $btn, $bg in $buttons {
-    [#{$btn}] {
+  @each $c, $bg in $components {
+    [#{$c}] {
       @each $prop, $item in $bg {
         #{$prop}: $item;
       }
