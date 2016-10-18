@@ -1,6 +1,6 @@
 # Grammuelle
 
-A Grammacology of Design: Grammuelle is a SASS minimalistic framework for  
+A Grammacology of Design: Grammuelle is a SASS minimalistic framework for 
 building cellular designs (all puns intented).
 
 ## Example
