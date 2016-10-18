@@ -1099,7 +1099,7 @@
   .__module__ .__column__ {
     text-align: right; }
 
-.__grid__ sidebar--deck__item {
+.__grid__ .sidebar--deck__item {
   align-self: stretch; }
 
 .__display__ {
