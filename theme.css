@@ -1129,10 +1129,6 @@
 .__model__ header {
   background: green; }
 
-/***
-@description
-Print rule
-***/
 button {
   background: #fff;
   color: #111;
@@ -1145,10 +1141,6 @@ button {
     font-family: FontAwesome;
     content: ""; }
 
-/***
-@description
-Print rule
-***/
 button {
   color: coral; }
 

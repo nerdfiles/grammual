@@ -1,11 +1,11 @@
 // @fileOverview ./__system__.scss
 
-// @inner
+// @vars
 $__rules__: null;
 
 
-// @cssdoc mixin
-// @name Class
+// @cssdoc mixin  
+// @name Class  
 // @description
 
 @mixin Class ($bem, $args, $rule: null) {
@@ -20,9 +20,9 @@ $__rules__: null;
 }
 
 
-// @cssdoc mixin
-// @name Rules
-// @description
+// @cssdoc mixin  
+// @name Rules  
+// @description  
 // Print rules
 
 @mixin Rules ($name: null, $rules: null, $icon: "\f095", $font-family: FontAwesome) {
@@ -65,16 +65,12 @@ $__rules__: null;
 }
 
 
-// @cssdoc mixin
-// @name Rule
-// @description
+// @cssdoc mixin  
+// @name Rule  
+// @description  
+// Like pie.
 
 @mixin Rule ($key, $value) {
-
-  /***
-  @description
-  Print rule
-  ***/
 
   @if (type-of($key) == 'string') {
     #{$key} {
@@ -87,10 +83,10 @@ $__rules__: null;
 }
 
 
-// @cssdoc mixin
-// @name define
-// @description
-// Define placeholder
+// @cssdoc mixin  
+// @name define  
+// @description  
+// Define placeholder.
 
 @mixin define ($key) {
   #{$key} {
@@ -101,16 +97,12 @@ $__rules__: null;
 }
 
 
-// @cssdoc mixin
-// @name hover
-// @description
-// Define hover styles
-// @usage
-//   a {
-//     @include hover($value: (
-//       background: $bgColor,
-//     ))
-//   }
+// @cssdoc mixin  
+// @name hover  
+// @description  
+// Define hover styles.  
+// @usage  
+//   a { @include hover($value: (background: $bgColor,)) }
 
 @mixin hover ($value) {
   &:hover {
