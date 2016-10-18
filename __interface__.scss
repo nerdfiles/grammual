@@ -48,7 +48,10 @@
 }
 
 .__grid__ {
-  @include Class($bem: ".sidebar--deck__item", $args: null) {
+  @include Class(
+    $bem: ".sidebar--deck__item",
+    $args: null
+  ) {
     align-self: stretch;
   }
 }
