@@ -1,20 +1,23 @@
+// @fileOverview ./__basics__.scss  
+// @description  
+// We implement real basics.
 
-// === Abstract Objects ==================================================== //
+// @implements abstract.objects //
 @import "abstract/objects/_point";
 @import "abstract/objects/_dimensions";
 @import "abstract/objects/_line";
 
-// === Abstract Structures ================================================= //
+// @implements abstract.structures //
 @import "abstract/structures/_formal-structures";
 
-// === Concrete Objects ==================================================== //
+// @implements concrete.objects //
 @import "concrete/objects/_color";
 
-// === Concrete Structures ================================================= //
+// @implements concrete.structures //
 @import "concrete/structures/_texture";
 
-// === Activities ========================================================== //
+// @implements activities //
 @import "activities/_repetition";
 
-// === Relations =========================================================== //
+// @implements relations //
 @import "relations/_amount";
