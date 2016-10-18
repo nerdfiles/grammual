@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /**(
  * @fileOverview ./_system.scss
  * )
@@ -19,30 +20,18 @@ Define placeholder
 @name Rule
 @description
 Define hover styles
+@usage
+  a {
+    @include hover($value: (
+      background: $bgColor,
+    ))
+  }
 //////////////////////////////////////*/
 /*//////////////////////////////////////
 @cssdoc mixin
 @name Rule
 @description
 //////////////////////////////////////*/
-/*//////////////////////////////////////
-@cssdoc mixin
-@name class.area
-@description
-//////////////////////////////////////*/
-/***
-@description
-Print rule
-***/
-button {
-  background: #fff;
-  color: #111;
-  padding: 0.5em 1em;
-  border-width: 1px; }
-
-button span {
-  text-decoration: underline; }
-
 /*//////////////////////////////////////
 @cssdoc mixin
 @name Class
@@ -88,6 +77,11 @@ button span {
   :root .__model__ header {
     color: orange; } }
 
+/*//////////////////////////////////////
+@cssdoc layout
+@description
+Layout.
+//////////////////////////////////////*/
 .__module__ form [capabillity="cancel"] {
   background: #777; }
 .__module__ form [role] {
@@ -99,9 +93,9 @@ button span {
   color: red; }
 
 .__module__ {
-  member: 33%; }
-  .__module__ {
-    display: flex; }
+  display: flex; }
+  .__module__ .__column__ {
+    text-align: right; }
 
 .__grid__ sidebar--deck__item {
   align-self: stretch; }
@@ -125,3 +119,38 @@ button span {
 
 .__model__ header {
   background: green; }
+
+/*//////////////////////////////////////
+@cssdoc @include
+@name button
+@description
+Set up button.
+//////////////////////////////////////*/
+/***
+@description
+Print rule
+***/
+button {
+  background: #fff;
+  color: #111;
+  padding: 0.5em 1em;
+  border-width: 1px; }
+
+[role='button'] span {
+  text-decoration: underline; }
+  [role='button'] span:before {
+    font-family: FontAwesome;
+    content: ""; }
+
+/***
+@description
+Print rule
+***/
+button {
+  color: coral; }
+
+[aria-pressed] span {
+  text-decoration: underline; }
+  [aria-pressed] span:before {
+    font-family: FontAwesome;
+    content: ""; }
