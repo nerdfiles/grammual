@@ -7,7 +7,7 @@ building cellular designs (all puns intented).
 
     $ bower install grammuelle
 
-`base.scss` and `__interface__.scss` are good places to start. The latter is
+`theme.scss` and `__interface__.scss` are good places to start. The latter is
 like a `master style` booklet for your project. After you are done preparing
 your grids, modules, rules, hooks, responses, etc., `import` your interface:
 
