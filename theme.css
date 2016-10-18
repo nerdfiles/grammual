@@ -1087,11 +1087,11 @@
 .__module__ form [cancel] {
   color: red; }
 
-.__module__:hover {
+.__module__ a:hover {
   color: skyblue; }
-.__module__:active {
+.__module__ a:active {
   color: purple; }
-.__module__:focus {
+.__module__ a:focus {
   color: teal; }
 
 .__module__ {

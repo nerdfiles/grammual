@@ -35,10 +35,10 @@
 }
 
 .__module__ {
-  @include Once(
+  a { @include Once(
     $model: "anchor",
     $collection: $onceExample
-  );
+  )}
 }
 
 .__module__ {
