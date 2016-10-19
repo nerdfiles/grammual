@@ -48,6 +48,11 @@ your grids, modules, rules, hooks, responses, etc., `import` your interface:
 
     @import "__theme__";
 
+## Is style for humans possible?
+
+Probably not, but until neversville we've got non-atomic declarative CSS to 
+make what's possible explicit.
+
 ## Documentation
 
 See `./docs/` or [Web docs](http://grammuelle.io/docs).
