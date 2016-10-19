@@ -1,14 +1,14 @@
 # Grammuelle
 
-<div style="text-align: center;">
-<img src="https://raw.githubusercontent.com/nerdfiles/grammuelle/master/images/logo.png" alt="Logo" />
+<div style="min-width: 100%; text-align: center;">
+<img width="320px" src="https://raw.githubusercontent.com/nerdfiles/grammuelle/master/images/logo.png" alt="Logo" />
 <div class="cite">
 <i>A Grammacology of Design</i>
 </div>
 </div>
 
-Grammuelle is a SASS minimalistic framework for 
-building cellular designs (all puns intented).
+Grammuelle is a SASS minimalistic framework for building cellular designs (all 
+puns intented).
 
 ## Example
 
