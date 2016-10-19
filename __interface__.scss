@@ -24,15 +24,41 @@
 @import "__responses__";
 
 
+// @cssdoc command  
+// @description  
+// @usage  
+//   $ do(__module__)
+
+@mixin Do ($gram) {
+  .__#{$gram}__ {
+    @content;
+  }
+}
+
+
 // @cssdoc layout  
 // @description  
 // Layout. DOUAWTF.
 
 :root {
   @extend %banner;
+  //@extend %aside;
 }
 
+
+// @cssdoc examples  
+// @description  
+// Ragtag examples.
+
 .__module__ {
+  @include If($type: "form") {
+    @include Then($type: "modal");
+  };
+}
+
+// Or:
+
+@include Do('module') {
   @include If($type: "form") {
     @include Then($type: "modal");
   };
@@ -42,7 +68,16 @@
   a { @include Once(
     $model: "anchor",
     $collection: $onceExample
-  )}
+  ) }
+}
+
+// Or:
+
+@include Do('module') {
+  a { @include Once(
+    $model: "anchor",
+    $collection: $onceExample
+  ) }
 }
 
 .__module__ {

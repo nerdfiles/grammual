@@ -1094,6 +1094,30 @@
 .__module__ modal [cancel] {
   color: red; }
 
+.__module__ form [capabillity="cancel"] {
+  background: #777; }
+.__module__ form [role] {
+  outline: 1px solid gold; }
+.__module__ form [rel] {
+  background: limegreen;
+  color: #fff; }
+.__module__ form [cancel] {
+  color: red; }
+.__module__ modal [role] {
+  outline: 1px solid gold; }
+.__module__ modal [rel] {
+  background: limegreen;
+  color: #fff; }
+.__module__ modal [cancel] {
+  color: red; }
+
+.__module__ a:hover {
+  color: skyblue; }
+.__module__ a:active {
+  color: purple; }
+.__module__ a:focus {
+  color: teal; }
+
 .__module__ a:hover {
   color: skyblue; }
 .__module__ a:active {
