@@ -77,7 +77,7 @@ Use BEM classes and reduce to hashes:
 
 ### P6. Non-deterministic Resolution
 
-    @include Class ...
+    @include Do ... Class ...
 
 ### P7. Isolation  
 
