@@ -6,21 +6,17 @@
 // 3. Independent (Isolated)
 // 4. Defined     (Durably Scoped)
 
+@import "./functions/index";
+
 $templateBase: (
   display: inline,
+  width: extendWidth(),
 );
 
 $templateOverride: (
   display: flex,
   justify-content: flex-end,
 );
-
-@function cWidth ($maxWidth: 100%) {
-  $_maxWidth: ($maxWidth / 16);
-  @if $_maxWidth % 4 == 1 {
-    @return true;
-  }
-}
 
 $onceExample: (
   hover:  (

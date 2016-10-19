@@ -2,15 +2,20 @@
 // @description  
 // Functions and recursion jokes. No polymorphisms allowed.
 
+$maxCol: 4;
+
 
 // @cssdoc  function  
 // @name cWidth  
 // @description  
-// Calculate a width along an ~O(n).
+// Calculate a width along an ~O(n).  
+// = ((max / pos) % col)[ * N]
+// @usage  
+// $ 0px + extendWidth($maxWidth: 1280px, $position: 4, $maxCol)
 
-@function cWidth ($maxWidth: 100%) {
-  $_maxWidth: ($maxWidth / 16);
-  @if $_maxWidth % 4 == 1 {
+@function extendWidth ($maxCol, $maxWidth: 100%, $position: 0) {
+  $_maxWidth: ($maxWidth / $position);
+  @if $_maxWidth % $maxCol != 0 {
     @return $_maxWidth;
   }
 }
