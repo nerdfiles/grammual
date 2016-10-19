@@ -1,0 +1,35 @@
+// @fileOverview ./__interface__.scss  
+// @description  
+// Module-level interplay goes here, or meta-CSS type junk like:  
+// 1. `modules`  
+// 2. `grids`  
+// 3. `displays`  
+// 4. `hooks` (`before`, `after` order serializations)  
+// 5. `models`  
+// Generally the design ontology should be implemented within an __internal__:  
+// 1. `Ifs`  
+// 2. `Onces`  
+// 3. `Spreads`  
+// 4. `Classes`  
+// 5. `Withs`  
+// 6. `Responses`  
+// 7. `Rules`  
+// 8. `Wraps`  
+
+@import "src/__templates__";
+@import "src/__system__";
+@import "src/__components__";
+@import "src/__declarations__";
+@import "src/__responses__";
+
+
+// @cssdoc command  
+// @description  
+// @usage  
+//   $ do(__module__)
+
+@mixin Do ($gram) {
+  .__#{$gram}__ {
+    @content;
+  }
+}
