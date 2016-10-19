@@ -49,6 +49,33 @@ To update the `__stylebook__` with
       background-image: url('http://placehold.it/350x150');
     }
 
+Get weird
+
+    // @fileOverview ./src/__templates__.scss
+    $tachyonsOnceExample: (
+      __typeplate__: (
+        _extend: f6,
+        _extend: grow,
+        _extend: no-underline,
+        _extend: br-pill,
+        _extend: ph3,
+        _extend: pv2,
+        _extend: mb2,
+        _extend: dib,
+        _extend: white,
+        _extend: bg-black,
+      ),
+    );
+
+    // @fileOverview ./__interface__.scss
+
+    @include Do('module__tachyonsOnceExample') {
+      a { @include Once(
+        $model: "anchor",
+        $collection: $tachyonsOnceExample
+      ) }
+    }
+
 Names are up to you. What problems are we solving?
 
 ## Problems
@@ -122,7 +149,7 @@ that we provide CSS middleware from admixtures of the following:
 
 ### Overview
 
-`__theme__.scss` and `__interface__.scss` are good places to start. The latter is
+`theme.scss` and `__interface__.scss` are good places to start. The latter is
 like a `master style` booklet for your project. After you are done preparing
 your grids, modules, rules, hooks, responses, etc., `import` your interface:
 

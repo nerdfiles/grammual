@@ -31,5 +31,8 @@
   "homepage": "https://github.com/nerdfiles/grammuelle#readme",
   "devDependencies": {
     "styledocco": "^0.6.6"
+  },
+  "dependencies": {
+    "tachyons-sass": "^4.5.5"
   }
 }

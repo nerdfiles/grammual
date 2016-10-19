@@ -107,10 +107,10 @@
 
 // Or:
 
-@include Do('module1') {
+@include Do('module__tachyonsOnceExample') {
   a { @include Once(
     $model: "anchor",
-    $collection: $onceExample
+    $collection: $tachyonsOnceExample
   ) }
 }
 

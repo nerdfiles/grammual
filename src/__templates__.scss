@@ -30,6 +30,21 @@ $onceExample: (
   ),
 );
 
+$tachyonsOnceExample: (
+  __typeplate__: (
+    _extend1: f6,
+    _extend2: grow,
+    _extend3: no-underline,
+    _extend4: br-pill,
+    _extend6: ph3,
+    _extend7: pv2,
+    _extend8: mb2,
+    _extend9: dib,
+    _extend10: white,
+    _extend11: bg-black,
+  ),
+);
+
 // @TODO Color palettes.
 $defaultActionBg: #777;
 

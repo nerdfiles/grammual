@@ -1,7 +1,12 @@
 // @fileOverview ./theme.scss
 
+// @implements newhotness
+
+@import "node_modules/tachyons-sass/tachyons.scss";
+
 // @implements __basics__
 @import "__basics__";
 
 // @implements __interface__
 @import "__interface__";
+

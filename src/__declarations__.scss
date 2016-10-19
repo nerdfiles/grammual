@@ -51,10 +51,30 @@
 // Stuff you'd like to do once.
 
 @mixin Once ($model: "anchor", $collection: ()) {
+  $ch: false;
+  $sy: "";
+
+  @each $k, $z in $collection {
+    @each $o, $u in $z {
+      @if str-index($o, '_extend') == 1 {
+        $ch: true;
+      }
+    }
+  }
+
   @each $k, $p in $collection {
-    &:#{$k} {
+    @if $ch == true {
+      $sy: "";
+    } @else {
+      $sy: "&:";
+    }
+    #{$sy}#{$k} {
       @each $j, $l in $p {
-        #{$j}: #{$l}
+        @if $ch == true {
+          @extend .#{$l} !optional;
+        } @else {
+          #{$j}: #{$l}
+        }
       }
     }
   }
