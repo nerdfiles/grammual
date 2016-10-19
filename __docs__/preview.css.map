@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAWE,UAAW;ECJX,UAAU,EAAE,IAAI",
+"sources": ["__places__.scss","preview.scss"],
+"names": [],
+"file": "preview.css"
+}

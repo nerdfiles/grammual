@@ -1,0 +1,16 @@
+// @fileOverview ./__places__.scss  
+// @description  
+// Placeholders.
+
+
+// @cssdoc placeholder  
+// @description  
+// @usage  
+//   $ include Place('container') { /* some sass */ }
+
+@mixin Place ($cname) {
+  .#{$cname} {
+    @content;
+  }
+}
+
