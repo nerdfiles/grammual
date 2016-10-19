@@ -59,9 +59,7 @@ Pair up thematic media queries with JS expectations:
 
 ### P3. Dead Code Elimination
 
-    See [pynaximander](https://github.com/nerdfiles/pynaximander).
-
-Otherwise
+See [pynaximander](https://github.com/nerdfiles/pynaximander). Otherwise
 
     @include Do ... With ...
 
@@ -83,7 +81,7 @@ Use BEM classes and reduce to hashes:
 
 ### P7. Isolation  
 
-    @include Do ... If ...
+    @include Do ... Rules ...
 
 ## Overview
 
