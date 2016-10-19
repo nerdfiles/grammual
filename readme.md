@@ -81,7 +81,7 @@ Get weird
     __basics__.scss     (physical and geometric denominations)
     __core__.scss       (just grammatical stuff)
     __interface__.scss  (idiomatic stuff, web stuff, thematic media queries)
-    __stylebook__.scss  (a new book for __grammuratificographs__)
+    __stylebook__.scss  (a new book for *grammuratificographs*)
 
 Names are up to you. What problems are we solving?
 
