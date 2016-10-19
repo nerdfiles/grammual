@@ -9,5 +9,9 @@
   "keywords": [
     "scss"
   ],
-  "license": "WTFPL"
+  "license": "WTFPL",
+  "devDependencies": {
+    "animatewithsass": "^3.2.2",
+    "hint.css": "^2.4.0"
+  }
 }

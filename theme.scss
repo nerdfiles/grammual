@@ -1,8 +1,13 @@
 // @fileOverview ./theme.scss
 
-// @implements newhotness
-
+// @implements tachyons.scss
 @import "node_modules/tachyons-sass/tachyons.scss";
+
+// @implements animate.scss
+@import "bower_components/animatewithsass/animate.scss";
+
+// @implements hint.scss
+@import "bower_components/hint.css/src/hint.scss";
 
 // @implements __basics__
 @import "__basics__";
