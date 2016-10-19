@@ -16,24 +16,7 @@
 // 7. `Rules`  
 // 8. `Wraps`  
 
-@import "src/__templates__";
-@import "src/__system__";
-@import "src/__components__";
-@import "src/__declarations__";
-@import "src/__responses__";
-
-
-// @cssdoc command  
-// @description  
-// @usage  
-//   $ do(__module__)
-
-@mixin Do ($gram) {
-  .__#{$gram}__ {
-    @content;
-  }
-}
-
+@import "__core__";
 
 // @cssdoc layout  
 // @description  
