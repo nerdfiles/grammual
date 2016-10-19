@@ -16,14 +16,14 @@ Module-level interplay goes here, or meta-CSS type junk like:
 
 Generally the design ontology should be implemented within an __internal__:
 
-1. [`Ifs`](https://github.com/nerdfiles/grammuelle/blob/master/__interface__.scss#L34)
-2. [`Onces`](https://github.com/nerdfiles/grammuelle/blob/master/__interface__.scss#L38)
-3. [`Spreads`](https://github.com/nerdfiles/grammuelle/blob/master/__interface__.scss#L45)
-4. [`Classes`](https://github.com/nerdfiles/grammuelle/blob/master/__interface__.scss#L51)
-5. [`Withs`](https://github.com/nerdfiles/grammuelle/blob/master/__interface__.scss#L60)
-6. [`Responses`](https://github.com/nerdfiles/grammuelle/blob/master/__interface__.scss#L69-L75)
-7. [`Rules`](https://github.com/nerdfiles/grammuelle/blob/master/__interface__.scss#L102)
-8. [`Wraps`](https://github.com/nerdfiles/grammuelle/blob/master/__interface__.scss#L132)
+1. [`Ifs`](https://github.com/nerdfiles/grammuelle/blob/master/__interface__.scss#L54)
+2. [`Onces`](https://github.com/nerdfiles/grammuelle/blob/master/__interface__.scss#L68)
+3. [`Spreads`](https://github.com/nerdfiles/grammuelle/blob/master/__interface__.scss#L75)
+4. [`Classes`](https://github.com/nerdfiles/grammuelle/blob/master/__interface__.scss#L81)
+5. [`Withs`](https://github.com/nerdfiles/grammuelle/blob/master/__interface__.scss#L90)
+6. [`Responses`](https://github.com/nerdfiles/grammuelle/blob/master/__interface__.scss#L99-L105)
+7. [`Rules`](https://github.com/nerdfiles/grammuelle/blob/master/__interface__.scss#L132)
+8. [`Wraps`](https://github.com/nerdfiles/grammuelle/blob/master/__interface__.scss#L162)
 
 ## Install
 
