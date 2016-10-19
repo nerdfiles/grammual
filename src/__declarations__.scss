@@ -159,3 +159,19 @@
   @content;
 }
 
+
+// @cssdoc mixin  
+// @name Has  
+// @description  
+// @usage  
+// @If($type: 'footer') { @Has('footer', $object) { @include Do($module) } }
+
+@mixin Has ($sel, $objects: ()) {
+  @each $o, $n in $objects {
+    @if str-index($o, $sel) == 1 {
+      [$sel] {
+        @content;
+      }
+    }
+  }
+}
