@@ -13,7 +13,8 @@
     "docs": "styledocco --name grammuelle --preprocessor \"scss --load-path=$(which scss)\"",
     "view.docs": "open docs/index.html",
     "inspect.bower": "less bower.json",
-    "hotfix": "git add .; git commit -m \"#hotfix: $(date)\"; git push -u origin master"
+    "hotfix": "git add .; git commit -m \"#hotfix: $(date)\"; git push -u origin master",
+    "do(__module__)": "echo \"@include Do('module') {}\" >> ./__core__.scss;"
   },
   "repository": {
     "type": "git",
