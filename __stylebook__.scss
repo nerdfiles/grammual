@@ -10,3 +10,7 @@
 @include Do('aNewModuleName') {
   background-image: url('http://placehold.it/350x150');
 }
+
+@include Do('modalType2') {
+  @include If("table");
+}

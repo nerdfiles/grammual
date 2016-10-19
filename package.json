@@ -10,7 +10,7 @@
     "test": "npm run compile",
     "compile": "sass .",
     "inspect": "less __theme__.css",
-    "watch": "sass --watch .",
+    "watch": "sass --watch __basics__.scss __core__.scss __interface__.scss __stylebook__.scss src theme.scss",
     "docs": "styledocco -n grammuelle -o docs -s __docs__ --preprocessor \"scss --compass\" src",
     "view.docs": "open docs/index.html",
     "inspect.bower": "less bower.json",
