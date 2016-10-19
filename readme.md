@@ -73,7 +73,7 @@ Use BEM classes and reduce to hashes:
 
 ### P5. Sharing Constants between CSS and JS
 
-    @include Do ... Once ... [getComputedStyled]
+    @include Do ... Once ... [getComputedStyled or requestAnimationFrame with basics]
 
 ### P6. Non-deterministic Resolution
 
