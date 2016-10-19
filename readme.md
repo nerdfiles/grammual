@@ -29,11 +29,23 @@ Generally the design ontology should be implemented within an __internal__:
 
     $ bower|npm install grammuelle
 
-`theme.scss` and `__interface__.scss` are good places to start. The latter is
+### Overview
+
+`__theme__.scss` and `__interface__.scss` are good places to start. The latter is
 like a `master style` booklet for your project. After you are done preparing
 your grids, modules, rules, hooks, responses, etc., `import` your interface:
 
+### Minimalism
+
+    @import "__stylebook__";
+
+### Maximalism
+
     @import "__interface__";
+
+### Extremalism
+
+    @import "__theme__";
 
 ## Documentation
 

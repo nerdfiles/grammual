@@ -8,8 +8,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "inspect": "less theme.css",
-    "watch": "sass watch .",
+    "inspect": "less __theme__.css",
+    "watch": "sass --watch .",
     "docs": "styledocco --name grammuelle --preprocessor \"scss --load-path=$(which scss)\"",
     "view.docs": "open docs/index.html",
     "inspect.bower": "less bower.json",
