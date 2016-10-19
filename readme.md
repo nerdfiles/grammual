@@ -12,6 +12,33 @@ puns intented).
 
 ## Example
 
+Try
+
+    @include Do('moduleN') {
+      @include If($type: "form") {
+        @include Then($type: "modal");
+      };
+    }
+
+To get
+
+    .__moduleN__ form [capabillity="cancel"] {
+      background: #777; }
+    .__moduleN__ form [role] {
+      outline: 1px solid gold; }
+    .__moduleN__ form [rel] {
+      background: limegreen;
+      color: #fff; }
+    .__moduleN__ form [cancel] {
+      color: red; }
+    .__moduleN__ modal [role] {
+      outline: 1px solid gold; }
+    .__moduleN__ modal [rel] {
+      background: limegreen;
+      color: #fff; }
+    .__moduleN__ modal [cancel] {
+      color: red; }
+
 Module-level interplay goes here, or meta-CSS type junk like:
 
 1. `modules`

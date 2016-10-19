@@ -32,7 +32,7 @@
 // @description  
 // Ragtag examples.
 
-.__module__ {
+.__moduleN__ {
   @include If($type: "form") {
     @include Then($type: "modal");
   };
@@ -40,13 +40,13 @@
 
 // Or:
 
-@include Do('module') {
+@include Do('module1') {
   @include If($type: "form") {
     @include Then($type: "modal");
   };
 }
 
-.__module__ {
+.__moduleN__ {
   a { @include Once(
     $model: "anchor",
     $collection: $onceExample
@@ -55,20 +55,20 @@
 
 // Or:
 
-@include Do('module') {
+@include Do('module1') {
   a { @include Once(
     $model: "anchor",
     $collection: $onceExample
   ) }
 }
 
-.__module__ {
+.__moduleN__ {
   @include Spread($event: "__column__") {
     text-align: right;
   }
 }
 
-.__grid__ {
+.__gridN__ {
   @include Class(
     $bem: "sidebar--deck__item",
     $args: (
@@ -114,7 +114,7 @@
   };
 }
 
-.__model__ {
+.__modelN__ {
   header {
     @include Responses((
       banner--print,

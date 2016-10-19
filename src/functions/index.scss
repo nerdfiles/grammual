@@ -13,7 +13,7 @@ $maxCol: 4;
 // @usage  
 // $ 0px + extendWidth($maxWidth: 1280px, $position: 4, $maxCol)
 
-@function extendWidth ($maxCol, $maxWidth: 100%, $position: 0) {
+@function extendWidth ($maxCol: $maxCol, $maxWidth: 100%, $position: 0) {
   $_maxWidth: ($maxWidth / $position);
   @if $_maxWidth % $maxCol != 0 {
     @return $_maxWidth;
