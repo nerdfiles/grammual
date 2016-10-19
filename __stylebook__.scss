@@ -5,4 +5,8 @@
 
 @include Do('module') {}
 
+// @implements **
 
+@include Do('aNewModuleName') {
+  background-image: url('http://placehold.it/350x150');
+}

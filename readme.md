@@ -39,6 +39,16 @@ To get
     .__moduleN__ modal [cancel] {
       color: red; }
 
+Maybe
+
+    $ npm run do.module "aNewModuleName" "background-image: url('http://placehold.it/350x150');"
+
+To update the `__stylebook__` with
+
+    @include Do('aNewModuleName') {
+      background-image: url('http://placehold.it/350x150');
+    }
+
 Names are up to you. What problems are we solving?
 
 ## Problems

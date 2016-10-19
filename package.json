@@ -14,7 +14,7 @@
     "view.docs": "open docs/index.html",
     "inspect.bower": "less bower.json",
     "hotfix": "git add .; git commit -m \"#hotfix: $(date)\"; git push -u origin master",
-    "do(__module__)": "echo \"@include Do('module') {}\" >> ./__stylebook__.scss;"
+    "do.module": "source ./bin/do.sh"
   },
   "repository": {
     "type": "git",

@@ -1,0 +1,1190 @@
+@charset "UTF-8";
+/***
+@inner
+***/
+/***
+@usage
+  @include Point($coords: 0 0 0);
+***/
+/***
+@usage
+  @include Line($startPoint..., $endPoint..., $length);
+***/
+.line .p0 {
+  transform: translateX(0) translateY(0) translateZ(0);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p0 {
+  transform: translateX(5) translateY(5) translateZ(5);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p1 {
+  transform: translateX(4) translateY(4) translateZ(4);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p2 {
+  transform: translateX(3) translateY(3) translateZ(3);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p3 {
+  transform: translateX(2) translateY(2) translateZ(2);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p4 {
+  transform: translateX(1) translateY(1) translateZ(1);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p5 {
+  transform: translateX(0) translateY(0) translateZ(0);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p6 {
+  transform: translateX(-1) translateY(-1) translateZ(-1);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p7 {
+  transform: translateX(-2) translateY(-2) translateZ(-2);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p8 {
+  transform: translateX(-3) translateY(-3) translateZ(-3);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p9 {
+  transform: translateX(-4) translateY(-4) translateZ(-4);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p10 {
+  transform: translateX(-5) translateY(-5) translateZ(-5);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p1 {
+  transform: translateX(1) translateY(1) translateZ(1);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p0 {
+  transform: translateX(5) translateY(5) translateZ(5);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p1 {
+  transform: translateX(4) translateY(4) translateZ(4);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p2 {
+  transform: translateX(3) translateY(3) translateZ(3);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p3 {
+  transform: translateX(2) translateY(2) translateZ(2);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p4 {
+  transform: translateX(1) translateY(1) translateZ(1);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p5 {
+  transform: translateX(0) translateY(0) translateZ(0);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p6 {
+  transform: translateX(-1) translateY(-1) translateZ(-1);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p7 {
+  transform: translateX(-2) translateY(-2) translateZ(-2);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p8 {
+  transform: translateX(-3) translateY(-3) translateZ(-3);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p9 {
+  transform: translateX(-4) translateY(-4) translateZ(-4);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p10 {
+  transform: translateX(-5) translateY(-5) translateZ(-5);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p2 {
+  transform: translateX(2) translateY(2) translateZ(2);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p0 {
+  transform: translateX(5) translateY(5) translateZ(5);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p1 {
+  transform: translateX(4) translateY(4) translateZ(4);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p2 {
+  transform: translateX(3) translateY(3) translateZ(3);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p3 {
+  transform: translateX(2) translateY(2) translateZ(2);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p4 {
+  transform: translateX(1) translateY(1) translateZ(1);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p5 {
+  transform: translateX(0) translateY(0) translateZ(0);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p6 {
+  transform: translateX(-1) translateY(-1) translateZ(-1);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p7 {
+  transform: translateX(-2) translateY(-2) translateZ(-2);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p8 {
+  transform: translateX(-3) translateY(-3) translateZ(-3);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p9 {
+  transform: translateX(-4) translateY(-4) translateZ(-4);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p10 {
+  transform: translateX(-5) translateY(-5) translateZ(-5);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p3 {
+  transform: translateX(3) translateY(3) translateZ(3);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p0 {
+  transform: translateX(5) translateY(5) translateZ(5);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p1 {
+  transform: translateX(4) translateY(4) translateZ(4);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p2 {
+  transform: translateX(3) translateY(3) translateZ(3);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p3 {
+  transform: translateX(2) translateY(2) translateZ(2);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p4 {
+  transform: translateX(1) translateY(1) translateZ(1);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p5 {
+  transform: translateX(0) translateY(0) translateZ(0);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p6 {
+  transform: translateX(-1) translateY(-1) translateZ(-1);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p7 {
+  transform: translateX(-2) translateY(-2) translateZ(-2);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p8 {
+  transform: translateX(-3) translateY(-3) translateZ(-3);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p9 {
+  transform: translateX(-4) translateY(-4) translateZ(-4);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p10 {
+  transform: translateX(-5) translateY(-5) translateZ(-5);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p4 {
+  transform: translateX(4) translateY(4) translateZ(4);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p0 {
+  transform: translateX(5) translateY(5) translateZ(5);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p1 {
+  transform: translateX(4) translateY(4) translateZ(4);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p2 {
+  transform: translateX(3) translateY(3) translateZ(3);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p3 {
+  transform: translateX(2) translateY(2) translateZ(2);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p4 {
+  transform: translateX(1) translateY(1) translateZ(1);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p5 {
+  transform: translateX(0) translateY(0) translateZ(0);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p6 {
+  transform: translateX(-1) translateY(-1) translateZ(-1);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p7 {
+  transform: translateX(-2) translateY(-2) translateZ(-2);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p8 {
+  transform: translateX(-3) translateY(-3) translateZ(-3);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p9 {
+  transform: translateX(-4) translateY(-4) translateZ(-4);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p10 {
+  transform: translateX(-5) translateY(-5) translateZ(-5);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p5 {
+  transform: translateX(5) translateY(5) translateZ(5);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p0 {
+  transform: translateX(5) translateY(5) translateZ(5);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p1 {
+  transform: translateX(4) translateY(4) translateZ(4);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p2 {
+  transform: translateX(3) translateY(3) translateZ(3);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p3 {
+  transform: translateX(2) translateY(2) translateZ(2);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p4 {
+  transform: translateX(1) translateY(1) translateZ(1);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p5 {
+  transform: translateX(0) translateY(0) translateZ(0);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p6 {
+  transform: translateX(-1) translateY(-1) translateZ(-1);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p7 {
+  transform: translateX(-2) translateY(-2) translateZ(-2);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p8 {
+  transform: translateX(-3) translateY(-3) translateZ(-3);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p9 {
+  transform: translateX(-4) translateY(-4) translateZ(-4);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p10 {
+  transform: translateX(-5) translateY(-5) translateZ(-5);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p6 {
+  transform: translateX(6) translateY(6) translateZ(6);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p0 {
+  transform: translateX(5) translateY(5) translateZ(5);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p1 {
+  transform: translateX(4) translateY(4) translateZ(4);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p2 {
+  transform: translateX(3) translateY(3) translateZ(3);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p3 {
+  transform: translateX(2) translateY(2) translateZ(2);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p4 {
+  transform: translateX(1) translateY(1) translateZ(1);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p5 {
+  transform: translateX(0) translateY(0) translateZ(0);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p6 {
+  transform: translateX(-1) translateY(-1) translateZ(-1);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p7 {
+  transform: translateX(-2) translateY(-2) translateZ(-2);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p8 {
+  transform: translateX(-3) translateY(-3) translateZ(-3);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p9 {
+  transform: translateX(-4) translateY(-4) translateZ(-4);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p10 {
+  transform: translateX(-5) translateY(-5) translateZ(-5);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p7 {
+  transform: translateX(7) translateY(7) translateZ(7);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p0 {
+  transform: translateX(5) translateY(5) translateZ(5);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p1 {
+  transform: translateX(4) translateY(4) translateZ(4);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p2 {
+  transform: translateX(3) translateY(3) translateZ(3);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p3 {
+  transform: translateX(2) translateY(2) translateZ(2);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p4 {
+  transform: translateX(1) translateY(1) translateZ(1);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p5 {
+  transform: translateX(0) translateY(0) translateZ(0);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p6 {
+  transform: translateX(-1) translateY(-1) translateZ(-1);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p7 {
+  transform: translateX(-2) translateY(-2) translateZ(-2);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p8 {
+  transform: translateX(-3) translateY(-3) translateZ(-3);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p9 {
+  transform: translateX(-4) translateY(-4) translateZ(-4);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p10 {
+  transform: translateX(-5) translateY(-5) translateZ(-5);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p8 {
+  transform: translateX(8) translateY(8) translateZ(8);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p0 {
+  transform: translateX(5) translateY(5) translateZ(5);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p1 {
+  transform: translateX(4) translateY(4) translateZ(4);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p2 {
+  transform: translateX(3) translateY(3) translateZ(3);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p3 {
+  transform: translateX(2) translateY(2) translateZ(2);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p4 {
+  transform: translateX(1) translateY(1) translateZ(1);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p5 {
+  transform: translateX(0) translateY(0) translateZ(0);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p6 {
+  transform: translateX(-1) translateY(-1) translateZ(-1);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p7 {
+  transform: translateX(-2) translateY(-2) translateZ(-2);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p8 {
+  transform: translateX(-3) translateY(-3) translateZ(-3);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p9 {
+  transform: translateX(-4) translateY(-4) translateZ(-4);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p10 {
+  transform: translateX(-5) translateY(-5) translateZ(-5);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p9 {
+  transform: translateX(9) translateY(9) translateZ(9);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p0 {
+  transform: translateX(5) translateY(5) translateZ(5);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p1 {
+  transform: translateX(4) translateY(4) translateZ(4);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p2 {
+  transform: translateX(3) translateY(3) translateZ(3);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p3 {
+  transform: translateX(2) translateY(2) translateZ(2);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p4 {
+  transform: translateX(1) translateY(1) translateZ(1);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p5 {
+  transform: translateX(0) translateY(0) translateZ(0);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p6 {
+  transform: translateX(-1) translateY(-1) translateZ(-1);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p7 {
+  transform: translateX(-2) translateY(-2) translateZ(-2);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p8 {
+  transform: translateX(-3) translateY(-3) translateZ(-3);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p9 {
+  transform: translateX(-4) translateY(-4) translateZ(-4);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p10 {
+  transform: translateX(-5) translateY(-5) translateZ(-5);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p10 {
+  transform: translateX(10) translateY(10) translateZ(10);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p0 {
+  transform: translateX(5) translateY(5) translateZ(5);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p1 {
+  transform: translateX(4) translateY(4) translateZ(4);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p2 {
+  transform: translateX(3) translateY(3) translateZ(3);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p3 {
+  transform: translateX(2) translateY(2) translateZ(2);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p4 {
+  transform: translateX(1) translateY(1) translateZ(1);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p5 {
+  transform: translateX(0) translateY(0) translateZ(0);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p6 {
+  transform: translateX(-1) translateY(-1) translateZ(-1);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p7 {
+  transform: translateX(-2) translateY(-2) translateZ(-2);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p8 {
+  transform: translateX(-3) translateY(-3) translateZ(-3);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p9 {
+  transform: translateX(-4) translateY(-4) translateZ(-4);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+.line .p10 {
+  transform: translateX(-5) translateY(-5) translateZ(-5);
+  min-width: 1px;
+  min-height: 1px;
+  width: 1px;
+  height: 1px;
+  max-height: 1px;
+  max-width: 1px; }
+
+@media (min-width: 801px) {
+  :root .__before__ {
+    color: orange; } }
+@media (min-width: 992px) {
+  :root .__before__, :root .__after__ {
+    color: orange; } }
+@media only print {
+  :root .__modelN__ header {
+    color: orange; } }
+
+.__moduleN__ form [capabillity="cancel"] {
+  background: #777; }
+.__moduleN__ form [role] {
+  outline: 1px solid gold; }
+.__moduleN__ form [rel] {
+  background: limegreen;
+  color: #fff; }
+.__moduleN__ form [cancel] {
+  color: red; }
+.__moduleN__ modal [role] {
+  outline: 1px solid gold; }
+.__moduleN__ modal [rel] {
+  background: limegreen;
+  color: #fff; }
+.__moduleN__ modal [cancel] {
+  color: red; }
+
+.__module1__ form [capabillity="cancel"] {
+  background: #777; }
+.__module1__ form [role] {
+  outline: 1px solid gold; }
+.__module1__ form [rel] {
+  background: limegreen;
+  color: #fff; }
+.__module1__ form [cancel] {
+  color: red; }
+.__module1__ modal [role] {
+  outline: 1px solid gold; }
+.__module1__ modal [rel] {
+  background: limegreen;
+  color: #fff; }
+.__module1__ modal [cancel] {
+  color: red; }
+
+.__moduleN__ a:hover {
+  color: skyblue; }
+.__moduleN__ a:active {
+  color: purple; }
+.__moduleN__ a:focus {
+  color: teal; }
+
+.__module1__ a:hover {
+  color: skyblue; }
+.__module1__ a:active {
+  color: purple; }
+.__module1__ a:focus {
+  color: teal; }
+
+.__moduleN__ {
+  display: flex; }
+  .__moduleN__ .__column__ {
+    text-align: right; }
+
+.__gridN__ [class="sidebar--deck__item"] {
+  align-self: stretch; }
+.__gridN__ [sidebar] [class*="block"] {
+  margin: 10px; }
+.__gridN__ [sidebar] [class*="element"] {
+  padding: 10px; }
+.__gridN__ [sidebar] [class*="modifier"] {
+  border-top: 1px solid gold; }
+
+.__display__ {
+  background: #121212;
+  background: yellow; }
+  .__display__ {
+    display: inline; }
+  .__display__ {
+    width: Infinity%; }
+  .__display__ {
+    display: flex; }
+  .__display__ {
+    justify-content: flex-end; }
+
+.__before__ {
+  background: blue;
+  color: pink; }
+
+.__after__ {
+  background: red; }
+
+.__modelN__ header {
+  background: green; }
+
+a::before {
+  content: "."; }
+a::after {
+  content: "."; }
+
+button {
+  background: #fff;
+  color: #111;
+  padding: 0.5em 1em;
+  border-width: 1px; }
+
+[role='button'] span {
+  text-decoration: underline; }
+  [role='button'] span:before {
+    font-family: FontAwesome;
+    content: ""; }
+
+button {
+  color: coral; }
+
+[aria-pressed] span {
+  text-decoration: underline; }
+  [aria-pressed] span:before {
+    font-family: FontAwesome;
+    content: ""; }
+
+/*# sourceMappingURL=theme.css.map */
