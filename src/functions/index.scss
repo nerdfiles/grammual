@@ -1,0 +1,17 @@
+// @fileOverview ./src/functions/index.scss  
+// @description  
+// Functions and recursion jokes. No polymorphisms allowed.
+
+
+// @cssdoc  function  
+// @name cWidth  
+// @description  
+// Calculate a width along an ~O(n).
+
+@function cWidth ($maxWidth: 100%) {
+  $_maxWidth: ($maxWidth / 16);
+  @if $_maxWidth % 4 == 1 {
+    @return $_maxWidth;
+  }
+}
+
