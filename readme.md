@@ -14,7 +14,8 @@ Module-level interplay goes here, or meta-CSS type junk like:
 5. `models`
 6. `basics`
 
-Generally the design ontology should be implemented within an __internal__:
+Generally the design ontology should be implemented within an __internal__, so 
+that we provide CSS middleware from admixtures of the following:
 
 1. [`Ifs`](https://github.com/nerdfiles/grammuelle/blob/master/__interface__.scss#L54)
 2. [`Onces`](https://github.com/nerdfiles/grammuelle/blob/master/__interface__.scss#L68)
