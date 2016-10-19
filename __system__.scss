@@ -14,8 +14,26 @@ $__rules__: null;
     $rule: "#{$bem}";
   }
 
-  #{$rule} {
+  [class="#{$rule}"] {
     @content;
+  }
+
+  $BlockEnd: str-index($bem, '--') - 1;
+  $ElementEnd: str-index($bem, '__') + 2;
+
+  @each $ch in $bem {
+    $subBlock: str-slice($bem, 0, $BlockEnd);
+    $subElement: str-slice($bem, $ElementEnd);
+
+    @each $u, $i in $args {
+      @if $ElementEnd != 1 {
+        [#{$subBlock}] [class*="#{$u}"] {
+          @each $thing, $that in $i {
+            #{$thing}: $that;
+          }
+        }
+      }
+    }
   }
 }
 

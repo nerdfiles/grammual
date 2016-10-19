@@ -1130,8 +1130,14 @@
   .__module__ .__column__ {
     text-align: right; }
 
-.__grid__ .sidebar--deck__item {
+.__grid__ [class="sidebar--deck__item"] {
   align-self: stretch; }
+.__grid__ [sidebar] [class*="block"] {
+  margin: 10px; }
+.__grid__ [sidebar] [class*="element"] {
+  padding: 10px; }
+.__grid__ [sidebar] [class*="modifier"] {
+  border-top: 1px solid gold; }
 
 .__display__ {
   background: #121212;

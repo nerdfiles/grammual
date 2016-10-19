@@ -88,8 +88,18 @@
 
 .__grid__ {
   @include Class(
-    $bem: ".sidebar--deck__item",
-    $args: null
+    $bem: "sidebar--deck__item",
+    $args: (
+      block: (
+        margin: 10px,
+      ),
+      element: (
+        padding: 10px,
+      ),
+      modifier: (
+        border-top: 1px solid gold,
+      ),
+    )
   ) {
     align-self: stretch;
   }
