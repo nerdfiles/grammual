@@ -10,7 +10,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "inspect": "less __theme__.css",
     "watch": "sass --watch .",
-    "docs": "styledocco --name grammuelle --preprocessor \"scss --compass\"",
+    "docs": "styledocco -n grammuelle -o docs -s __docs__ --preprocessor \"scss --compass\" src",
     "view.docs": "open docs/index.html",
     "inspect.bower": "less bower.json",
     "hotfix": "git add .; git commit -m \"#hotfix: $(date)\"; git push -u origin master",
