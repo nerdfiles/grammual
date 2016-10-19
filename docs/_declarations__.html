@@ -54,17 +54,21 @@
   }
 
   @each $k, $p in $collection {
-    @if $ch == true {
-      $sy: "";
-    } @else {
+    @if $ch == false {
       $sy: "&:";
+    } @else {
+      $sy: "";
+      $k: "&";
     }
     #{$sy}#{$k} {
       @each $j, $l in $p {
+        @if $ch == false {
+          @each $h, $m in $l {
+            #{$h}: #{$m};
+          }
+        }
         @if $ch == true {
           @extend .#{$l} !optional;
-        } @else {
-          #{$j}: #{$l}
         }
       }
     }
