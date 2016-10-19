@@ -12,11 +12,10 @@ becomes an entirely different practice:
 
 Names sort of fill in a void space on lines. Grammuelle reads like so:
 
-    --------
       Conditional Gram
-    --------
+    .-------- {
         Conitional Gram
-    --------
+    .-------- {
           Conditional Gram
           ...
 
