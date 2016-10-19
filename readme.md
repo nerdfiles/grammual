@@ -129,7 +129,7 @@ Module-level interplay goes here, or meta-CSS type junk like:
 3. `displays`
 4. `hooks` (`before`, `after` order serializations)
 5. `models`
-6. `basics`
+6. `basics` (wip)
 
 Generally the design ontology should be implemented within an __internal__, so 
 that we provide CSS middleware from admixtures of the following:
