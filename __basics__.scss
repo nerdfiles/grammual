@@ -3,21 +3,21 @@
 // We implement real basics.
 
 // @implements abstract.objects
-@import "abstract/objects/_point";
-@import "abstract/objects/_dimensions";
-@import "abstract/objects/_line";
+@import "src/abstract/objects/_point";
+@import "src/abstract/objects/_dimensions";
+@import "src/abstract/objects/_line";
 
 // @implements abstract.structures
-@import "abstract/structures/_formal-structures";
+@import "src/abstract/structures/_formal-structures";
 
 // @implements concrete.objects
-@import "concrete/objects/_color";
+@import "src/concrete/objects/_color";
 
 // @implements concrete.structures
-@import "concrete/structures/_texture";
+@import "src/concrete/structures/_texture";
 
 // @implements activities
-@import "activities/_repetition";
+@import "src/activities/_repetition";
 
 // @implements relations
-@import "relations/_amount";
+@import "src/relations/_amount";

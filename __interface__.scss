@@ -16,12 +16,11 @@
 // 7. `Rules`  
 // 8. `Wraps`  
 
-
-@import "__templates__";
-@import "__system__";
-@import "__components__";
-@import "__declarations__";
-@import "__responses__";
+@import "src/__templates__";
+@import "src/__system__";
+@import "src/__components__";
+@import "src/__declarations__";
+@import "src/__responses__";
 
 
 // @cssdoc command  
