@@ -1,13 +1,15 @@
 // @fileOverview ./theme.scss
 
+
 // @implements tachyons.scss
-@import "node_modules/tachyons-sass/tachyons.scss";
+@import "./node_modules/tachyons-sass/tachyons.scss";
 
 // @implements animate.scss
-@import "bower_components/animatewithsass/animate.scss";
+@import "./bower_components/animatewithsass/animate";
 
 // @implements hint.scss
-@import "bower_components/hint.css/src/hint.scss";
+@import "./bower_components/hint.css/src/hint.base.css";
+
 
 // @implements __basics__
 @import "__basics__";
