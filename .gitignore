@@ -3,3 +3,12 @@ node_modules
 theme.css
 theme.css.map
 bower_components
+__basics__.css
+__basics__.css.map
+__core__.css
+__core__.css.map
+__interface__.css
+__interface__.css.map
+__stylebook__.css
+__stylebook__.css.map
+
