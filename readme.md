@@ -1,7 +1,7 @@
 # Grammuelle
 
 <div style="min-width: 100%; text-align: center;">
-<img width="320px" src="https://raw.githubusercontent.com/nerdfiles/grammuelle/master/images/logo.png" alt="Logo" />
+<img width="240px" src="https://raw.githubusercontent.com/nerdfiles/grammuelle/master/images/logo.png" alt="Logo" />
 <div class="cite">
 <i>A Grammacology of Design</i>
 </div>
