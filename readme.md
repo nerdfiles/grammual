@@ -39,6 +39,54 @@ To get
     .__moduleN__ modal [cancel] {
       color: red; }
 
+Names are up to you. What problems are we solving?
+
+## Problems
+
+vjuex's `big css` problems:
+
+### P1. Don't mess with other CSS on the page
+
+Guard against globals:
+
+    @include Do ... If ... Then ...
+
+### P2. Dependencies
+
+Pair up thematic media queries with JS expectations:
+
+    @include Do ... Responses ...
+
+### P3. Dead Code Elimination
+
+    See [pynaximander](https://github.com/nerdfiles/pynaximander).
+
+Otherwise
+
+    @include Do ... With ...
+
+encourages template sharing which can be used in build automation pruning.
+
+### P4. Minification
+
+Use BEM classes and reduce to hashes:
+
+    @include Do ... Class ...
+
+### P5. Sharing Constants between CSS and JS
+
+    @include Do ... Once ... [getComputedStyled]
+
+### P6. Non-deterministic Resolution
+
+    @include Class ...
+
+### P7. Isolation  
+
+    @include Do ... If ...
+
+## Overview
+
 Module-level interplay goes here, or meta-CSS type junk like:
 
 1. `modules`
