@@ -7,7 +7,7 @@
 </div>
 </div>
 
-Grammuelle is a SASS minimalistic framework for building cellular designs (all 
+Grammuelle is a Declarative CSS (SASS) framework for building cellular designs (all 
 puns intented).
 
 ## Example
