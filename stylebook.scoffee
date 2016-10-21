@@ -1,8 +1,12 @@
 Responses = require('Responses')
 
-Class modelP
+class ModelP
   constructor: (@content) ->
-    Responses(['banner--print'], @)
+    Responses(['%%SCSS_MEDIA_QUERY_THEME%%'], @)
     return
   header: () ->
     @render()
+
+mp = new ModelP '%%SCSS_CONTENT%%'
+
+module.exports = mp
