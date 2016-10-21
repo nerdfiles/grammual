@@ -68,15 +68,19 @@
 // 7. `Rules`  
 // 8. `Wraps`  
 
+// @implements __core__
 @import "__core__";
 
 // @cssdoc layout  
 // @description  
-// Layout. DOUAWTF.
+// Your project likely will consist of a set of basic extenders. We set up `:root`
+// as a singleton for thematic media queries such that if they are called, their CSS
+// will be adjoined to the master style book.
 
 :root {
   @extend %banner;
   //@extend %aside;
+  //@extend %some-shared-media-query-template;
 }
 
 

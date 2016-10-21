@@ -1,11 +1,14 @@
 // @fileOverview ./__stylebook__.scss
 
-// @implements __core__
 @import "__core__";
 
-@include Do('module') {}
+// @cssdoc layout  
+
+:root {
+}
 
 // @implements **
+@include Do('module') {}
 
 @include Do('aNewModuleName') {
   background-image: url('http://placehold.it/350x150');
