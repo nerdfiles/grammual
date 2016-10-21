@@ -20,3 +20,12 @@ $maxCol: 4;
   }
 }
 
+@function plat ($terms...) {
+  $proplist: ();
+  $c: 1;
+  @each $i, $k in $terms {
+    $proplist: map-merge($proplist, ("_#{$i}#{$c}": $k));
+    $c: $c+1;
+  }
+  @return $proplist;
+}

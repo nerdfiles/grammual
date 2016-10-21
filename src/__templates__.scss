@@ -46,6 +46,22 @@ $tachyonsOnceExample: (
   ),
 );
 
+$tachyonsOnceExampleRedux: (
+  __typeplate__: plat(
+    (extend, f6),
+    (extend, grow),
+    (extend, no-underline),
+    (extend, br-pill),
+    (extend, ph3),
+    (extend, pv2),
+    (extend, mb2),
+    (extend, dib),
+    (extend, white),
+    (extend, bg-black),
+    (extend, hint--bottom)
+  ),
+);
+
 // @TODO Color palettes.
 $defaultActionBg: #777;
 
