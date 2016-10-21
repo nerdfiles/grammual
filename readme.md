@@ -55,16 +55,16 @@ Get weird
     // @fileOverview ./src/__templates__.scss
     $tachyonsOnceExample: (
       __typeplate__: (
-        _extend: f6,
-        _extend: grow,
-        _extend: no-underline,
-        _extend: br-pill,
-        _extend: ph3,
-        _extend: pv2,
-        _extend: mb2,
-        _extend: dib,
-        _extend: white,
-        _extend: bg-black,
+        _extend1: f6,
+        _extend2: grow,
+        _extend3: no-underline,
+        _extend4: br-pill,
+        _extend5: ph3,
+        _extend6: pv2,
+        _extend7: mb2,
+        _extend8: dib,
+        _extend9: white,
+        _extend10: bg-black,
       ),
     );
 
