@@ -131,7 +131,7 @@
 // @description  
 // ¯\\(°_o)/¯ 
 
-@mixin Schema ($name: "") {
+@mixin Schema ($name: "", $config: ()) {
 
   $smResp: "#{$name}--sm";
   $mdResp: "#{$name}--md";

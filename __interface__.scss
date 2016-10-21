@@ -83,7 +83,6 @@
   //@extend %some-shared-media-query-template;
 }
 
-
 // @cssdoc examples  
 // @description  
 // Ragtag examples.
@@ -180,6 +179,15 @@
   }
 }
 
+@include Do('modelP') {
+  @include Do('header') {
+    @include Responses((
+      banner--print,
+    )) {
+      background: purple;
+    }
+  }
+}
 
 // @cssdoc include  
 // @name a  
