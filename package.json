@@ -34,6 +34,8 @@
     "styledocco": "^0.6.6"
   },
   "dependencies": {
+    "lodash": "^4.16.4",
+    "promise-defer": "^1.0.0",
     "tachyons-sass": "^4.5.5"
   }
 }

@@ -1,0 +1,14 @@
+:root {
+  @extend %banner;
+}
+
+@include Do('modelP') {
+  @include Do('header') {
+    @include Responses((
+      banner--print,
+    )) {
+      background: purple;
+    }
+  }
+}
+
