@@ -110,7 +110,7 @@
 @include Do('module__tachyonsOnceExample') {
   a { @include Once(
     $model: "anchor",
-    $collection: $tachyonsOnceExample
+    $collection: $tachyonsOnceExampleRedux
   ) }
 }
 

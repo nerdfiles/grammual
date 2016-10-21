@@ -53,18 +53,19 @@ To update the `__stylebook__` with
 Get weird
 
     // @fileOverview ./src/__templates__.scss
-    $tachyonsOnceExample: (
-      __typeplate__: (
-        _extend1: f6,
-        _extend2: grow,
-        _extend3: no-underline,
-        _extend4: br-pill,
-        _extend5: ph3,
-        _extend6: pv2,
-        _extend7: mb2,
-        _extend8: dib,
-        _extend9: white,
-        _extend10: bg-black,
+    $tachyonsOnceExampleRedux: (
+      __typeplate__: plat(
+        (extend, f6),
+        (extend, grow),
+        (extend, no-underline),
+        (extend, br-pill),
+        (extend, ph3),
+        (extend, pv2),
+        (extend, mb2),
+        (extend, dib),
+        (extend, white),
+        (extend, bg-black),
+        (extend, hint--bottom)
       ),
     );
 
@@ -73,7 +74,7 @@ Get weird
     @include Do('module__tachyonsOnceExample') {
       a { @include Once(
         $model: "anchor",
-        $collection: $tachyonsOnceExample
+        $collection: $tachyonsOnceExampleRedux
       ) }
     }
 
