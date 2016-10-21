@@ -6,7 +6,7 @@ $maxCol: 4;
 
 
 // @cssdoc  function  
-// @name cWidth  
+// @name extendWidth  
 // @description  
 // Calculate a width along an ~O(n).  
 // = ((max / pos) % col)[ * N]
@@ -20,7 +20,13 @@ $maxCol: 4;
   }
 }
 
-@function plat ($terms...) {
+// @cssdoc function
+// @name plat
+// @description
+// Accept lists of named custom classes.
+// @param $terms {...} ...
+
+@function _ ($terms...) {
   $proplist: ();
   $c: 1;
   @each $i, $k in $terms {

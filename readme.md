@@ -54,7 +54,7 @@ Get weird
 
     // @fileOverview ./src/__templates__.scss
     $tachyonsOnceExampleRedux: (
-      __typeplate__: plat(
+      __typeplate__: _(
         (extend, f6),
         (extend, grow),
         (extend, no-underline),
