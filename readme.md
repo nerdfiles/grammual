@@ -156,6 +156,11 @@ that we provide CSS middleware from admixtures of the following:
 
     $ bower|npm install grammuelle
 
+Now update
+
+    // your theme.scss
+    @import "path/to/gramuelle/__stylebook__";
+
 ### Overview
 
 `theme.scss` and `__interface__.scss` are good places to start. The latter is
