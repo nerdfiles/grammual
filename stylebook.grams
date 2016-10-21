@@ -8,6 +8,7 @@ class %%SCSS_NAME%%
     @render()
     log @
   render: () ->
-    @inner = new %%SCSS_INNER%% @content
+    @header = new %%SCSS_INNER%% @content
+    return
 mp = new %%SCSS_NAME%% '%%SCSS_CONTENT%%'
 module.exports = mp

@@ -1,7 +1,20 @@
+###
+@fileOverview ./index.coffee
+@description
+Grammuelle.
+###
+
 __fs__ = require('fs')
 __q__ = require('promise-defer')
 log = console.log
 _ = require('lodash')
+
+
+###
+@name open
+@description
+Open a stylebook.
+###
 
 open = (f = './__test__.scss') ->
   defer = __q__()
@@ -11,10 +24,22 @@ open = (f = './__test__.scss') ->
   )
   defer.promise
 
+###
+@name capture_module
+@description
+Look for Do(...)
+###
+
 capture_module = (view) ->
   if m = view.match /(\@include\s*(.*)\(\')(.*)(\')/
     firstCharOfName = m[3].split('').reverse().pop().toUpperCase()
     name = firstCharOfName + m[3].slice(1, m[3].length)
+
+###
+@name capture_array
+@description
+Look for Response((...))
+###
 
 capture_array = (view) ->
   v = view.split('\n')
@@ -45,9 +70,21 @@ class Parser
     c = content.split("\n")
     list = _.filter(@ready(view) for view in c)
 
+
+###
+@class
+@name Operation
+###
+
 class Operation
   constructor: (@op) ->
     @op
+
+
+###
+@class
+@name Grammuelle
+###
 
 class Grammuelle
 
@@ -75,8 +112,8 @@ class Grammuelle
 
       log @schema
 
-g = new Grammuelle
 
+g = new Grammuelle
 g.initialize()
 
 
