@@ -41,12 +41,13 @@ To get
 
 Maybe
 
-    $ npm run do.module "aNewModuleName" "background-image: url('http://placehold.it/350x150');"
+    $ npm run do.module "aNewModuleName" "background-image: url('http://placehold.it/350x150'); color: gold;"
 
 To update the `__stylebook__` with
 
     @include Do('aNewModuleName') {
       background-image: url('http://placehold.it/350x150');
+      color: gold;
     }
 
 Get weird
