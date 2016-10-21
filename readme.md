@@ -39,9 +39,9 @@ To get
     .__moduleN__ modal [cancel] {
       color: red; }
 
-Maybe
+Maybe (not working yet)
 
-    $ npm run do.module "aNewModuleName" "background-image: url('http://placehold.it/350x150'); color: gold;"
+    $ grammuelle do "aNewModuleName" "background-image: url('http://placehold.it/350x150'); color: gold;"
 
 To update the `__stylebook__` with
 
