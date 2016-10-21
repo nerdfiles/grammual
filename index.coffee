@@ -64,11 +64,11 @@ class Parser
       parser(loaded or '')
     else
       loaded
-  ready: (view) ->
-    p = @parsers.reduce @contract, view
   parse: (content) ->
     c = content.split("\n")
     list = _.filter(@ready(view) for view in c)
+  ready: (view) ->
+    p = @parsers.reduce @contract, view
 
 
 ###
