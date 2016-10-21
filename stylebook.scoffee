@@ -1,0 +1,8 @@
+Responses = require('Responses')
+
+Class modelP
+  constructor: (@content) ->
+    Responses(['banner--print'], @)
+    return
+  header: () ->
+    @render()
