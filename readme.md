@@ -78,6 +78,15 @@ Get weird
       ) }
     }
 
+## Install
+
+    $ bower|npm install grammuelle
+
+Now update
+
+    // your theme.scss
+    @import "path/to/gramuelle/__stylebook__";
+
 ## Grammar books
 
     __basics__.scss     (physical and geometric denominations)
@@ -152,16 +161,7 @@ that we provide CSS middleware from admixtures of the following:
 7. [`Wraps`](https://github.com/nerdfiles/grammuelle/blob/master/__interface__.scss#L185)
 8. [`Rules`](https://github.com/nerdfiles/grammuelle/blob/master/__interface__.scss#L194-L202)
 
-## Install
-
-    $ bower|npm install grammuelle
-
-Now update
-
-    // your theme.scss
-    @import "path/to/gramuelle/__stylebook__";
-
-### Overview
+## Overview
 
 `theme.scss` and `__interface__.scss` are good places to start. The latter is
 like a `master style` booklet for your project. After you are done preparing
