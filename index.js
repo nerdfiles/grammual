@@ -7,18 +7,41 @@ Grammuelle.
  */
 
 (function() {
-  var Grammuelle, Operation, Parser, _, __fs__, __q__, capture_module, g, log, open;
+  var Grammuelle, Operation, P, Parser, _, __fs__, __q__, async, capture_module, g, log, open;
 
   __fs__ = require('fs');
 
   __q__ = require('promise-defer');
 
+  P = require('promise');
+
   log = console.log;
 
   _ = require('lodash');
 
+  async = require('async');
+
+
+  /*
+  @internal
+  @name int
+   */
+
   String.prototype.int = function() {
     return parseInt(this, 10);
+  };
+
+
+  /*
+  @internal
+  @name capitalize
+   */
+
+  String.prototype.capitalize = function() {
+    var capitalizedFirstCharOfName, firstCharRemoved;
+    capitalizedFirstCharOfName = this.split('').reverse().pop().toUpperCase();
+    firstCharRemoved = this.slice(1, this.length);
+    return capitalizedFirstCharOfName + firstCharRemoved;
   };
 
 
@@ -126,72 +149,79 @@ Grammuelle.
 
     p = new Parser([capture_module]);
 
-    function Grammuelle() {
-      this.schema = null;
-      this.schemas = [];
-      this.done = null;
-      open('./stylebook.grams').then(function(data) {
-        return this.schema = data;
-      });
-    }
+    function Grammuelle() {}
+
+    Grammuelle.prototype.getModules = function() {
+      this.generate();
+      return this.el;
+    };
 
     Grammuelle.prototype.generate = function() {
-      var d;
-      d = __q__();
       open().then(function(data) {
-        var parseMap, psb;
+        var el, parseMap, psb;
         psb = p.parse(data);
         parseMap = _.filter(_.map(psb, function(d) {
-          var c, capitalizedFirstCharOfName, classPosition, dirtyName, firstCharRemoved, h, newComponentName, newModuleName, opname, privateClassPosition;
+          var c, classPosition, dirtyName, h, newComponentName, newModuleName, opname, privateClassPosition;
           opname = null;
           if (c = d.match(/module\[([0-9])\]\_\_(.*)/)) {
             h = c[1].int();
             classPosition = 0;
             privateClassPosition = 2;
             dirtyName = c[2];
-            if (h === classPosition && dirtyName) {
-              capitalizedFirstCharOfName = dirtyName.split('').reverse().pop().toUpperCase();
-              firstCharRemoved = dirtyName.slice(1, dirtyName.length);
-              newModuleName = capitalizedFirstCharOfName + firstCharRemoved;
+            if (h === classPosition) {
+              newModuleName = dirtyName.capitalize();
               opname = newModuleName;
             }
-            if (h === privateClassPosition && dirtyName) {
+            if (h === privateClassPosition) {
               newComponentName = dirtyName.toLowerCase();
               opname = newComponentName;
             }
           }
-          return opname;
+          return {
+            opname: opname,
+            oppos: h
+          };
         }));
+        el = [];
         _.each(parseMap, function(q, i) {
-          var INIT, INIT_SCOPE, INNER, INNER_SCOPE, NAME, NAME_SCOPE, capitalizedFirstCharOfName, firstCharRemoved, init, inner, named, newPrivateClassName;
-          NAME = /%%SCSS_NAME%%/;
-          NAME_SCOPE = /%%SCSS_NAME%%/g;
-          INNER = /%%SCSS_INNER%%/;
-          INNER_SCOPE = /%%SCSS_INNER%%/g;
-          INIT = /%%SCSS_INIT_INNER%%/;
-          INIT_SCOPE = /%%SCSS_INIT_INNER%%/g;
-          inner = this.schema.match(INNER);
-          init = this.schema.match(INIT);
-          named = this.schema.match(NAME);
-          if (named) {
-            this.schema = this.schema.replace(NAME_SCOPE, q);
-            return this.filename = q;
-          } else if (inner || init) {
-            if (inner) {
-              capitalizedFirstCharOfName = q.split('').reverse().pop().toUpperCase();
-              firstCharRemoved = q.slice(1, q.length);
-              newPrivateClassName = capitalizedFirstCharOfName + firstCharRemoved;
-              this.schema = this.schema.replace(INNER_SCOPE, newPrivateClassName);
+          var ankh, classPosition, filename, privateClassPosition;
+          filename = null;
+          ankh = null;
+          classPosition = 0;
+          privateClassPosition = 2;
+          open('./stylebook.grams').then(function(grams) {
+            var INIT, INIT_SCOPE, INNER, INNER_SCOPE, NAME, NAME_SCOPE, defer, init, inner, named, newPrivateClassName;
+            defer = __q__();
+            ankh = grams;
+            NAME = /%%SCSS_NAME%%/;
+            NAME_SCOPE = /%%SCSS_NAME%%/g;
+            INNER = /%%SCSS_INNER%%/;
+            INNER_SCOPE = /%%SCSS_INNER%%/g;
+            INIT = /%%SCSS_INIT_INNER%%/;
+            INIT_SCOPE = /%%SCSS_INIT_INNER%%/g;
+            inner = grams.match(INNER);
+            init = grams.match(INIT);
+            named = grams.match(NAME);
+            if (init && q.oppos === privateClassPosition) {
+              ankh = ankh.replace(INIT_SCOPE, q.opname);
             }
-            return this.schema = this.schema.replace(INIT_SCOPE, q);
-          }
+            if (inner) {
+              newPrivateClassName = q.opname.capitalize();
+              ankh = ankh.replace(INNER_SCOPE, newPrivateClassName);
+            }
+            if (named) {
+              ankh = ankh.replace(NAME_SCOPE, q.opname);
+              filename = q.opname;
+            }
+            return defer.resolve({
+              schema: ankh,
+              filename: filename
+            });
+          });
+          return el.push(defer.promise);
         });
-        return d.resolve({
-          schema: this.schema,
-          filename: this.filename
-        });
+        return log(el);
       });
-      return d.promise;
     };
 
     return Grammuelle;
@@ -199,22 +229,5 @@ Grammuelle.
   })();
 
   g = new Grammuelle;
-
-  g.generate().then(function(output) {
-    var ext, filepath, inputdata, pathbase;
-    pathbase = './';
-    ext = '.coffee';
-    filepath = pathbase + output.filename + ext;
-    inputdata = output.schema;
-    return __fs__.writeFile(filepath, inputdata, (function(_this) {
-      return function(error) {
-        if (error != null) {
-          return log(error);
-        } else {
-          return log("Saved " + output.filename);
-        }
-      };
-    })(this));
-  });
 
 }).call(this);

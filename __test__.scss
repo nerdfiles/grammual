@@ -12,3 +12,12 @@
   }
 }
 
+@include Do('catModel') {
+  @include Do('header') {
+    @include Responses((
+      banner--print,
+    )) {
+      background: purple;
+    }
+  }
+}
