@@ -87,6 +87,36 @@ Now update
     // your theme.scss
     @import "path/to/gramuelle/__stylebook__";
 
+### Then try in `__stylebook__`:
+
+    :root {
+      @extend %banner;
+    }
+
+    @include Do('modelP') {
+      @include Do('header') {
+        @include Responses((
+          banner--print,
+        )) {
+          background: purple;
+        }
+      }
+    }
+
+    $ node index.js path/to/stylebook
+
+    // (filename ModelP.coffee created)
+
+    class ModelP
+      class Header
+        constructor: () ->
+      constructor: () ->
+        @render()
+      render: () ->
+        @header = new Header
+        return
+    module.exports = ModelP
+
 ## Grammar books
 
     __basics__.scss     (physical and geometric denominations)

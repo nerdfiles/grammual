@@ -1,14 +1,9 @@
-Responses = require('Responses')
-log = console.log
 class %%SCSS_NAME%%
   class %%SCSS_INNER%%
     constructor: () ->
-  constructor: (@content) ->
-    Responses(['%%SCSS_MEDIA_QUERY_THEME%%'], @)
+  constructor: () ->
     @render()
-    log @
   render: () ->
-    @header = new %%SCSS_INNER%% @content
+    @%%SCSS_INIT_INNER%% = new %%SCSS_INNER%%
     return
-mp = new %%SCSS_NAME%% '%%SCSS_CONTENT%%'
-module.exports = mp
+module.exports = %%SCSS_NAME%%
