@@ -32,8 +32,8 @@ Look for Do(...)
 
 capture_module = (view) ->
   if m = view.match /(\@include\s*(.*)\(\')(.*)(\')/
-    firstCharOfName = m[3].split('').reverse().pop().toUpperCase()
-    name = firstCharOfName + m[3].slice(1, m[3].length)
+    view = "module[#{m.index}]__" + m[3]
+  view
 
 ###
 @name capture_array
@@ -42,11 +42,19 @@ Look for Response((...))
 ###
 
 capture_array = (view) ->
-  v = view.split('\n')
-  counter++
-  if m = view.match /(\@include\s*(.*))/
-    if z = m[2].match /(.*)\(\(/
-      z
+  if m = view.match /(\@include\s*(.*)\(\()/
+    view = "response[#{m.index}]__" + m[2]
+  view
+
+###
+@name capture_mq
+@description
+Look for W--W
+###
+
+capture_mq = (view) ->
+  if q = view.match /^((.*)\-\-)(.*)/
+    view = "mediaquery[#{q.index}]__" + _.trim q[0]
 
 
 ###
@@ -66,7 +74,9 @@ class Parser
       loaded
   parse: (content) ->
     c = content.split("\n")
-    list = _.filter(@ready(view) for view in c)
+    list = (@ready(view) for view in c)
+    log list
+    list
   ready: (view) ->
     p = @parsers.reduce @contract, view
 
@@ -88,7 +98,7 @@ class Operation
 
 class Grammuelle
 
-  p = new Parser [capture_module]
+  p = new Parser [capture_module, capture_array, capture_mq]
 
   constructor: () ->
     @schema = null
@@ -99,6 +109,7 @@ class Grammuelle
   initialize: () ->
     open().then (data) ->
       psb = p.parse data
+      log psb
 
       parseMap = _.map psb, (d) ->
         new Operation d
@@ -110,7 +121,7 @@ class Grammuelle
         else
           @schema = @schema.replace(/%%SCSS_INNER%%/g, q.op)
 
-      log @schema
+      #log @schema
 
 
 g = new Grammuelle

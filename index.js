@@ -44,11 +44,11 @@ Grammuelle.
    */
 
   capture_module = function(view) {
-    var firstCharOfName, m, name;
+    var m;
     if (m = view.match(/(\@include\s*(.*)\(\')(.*)(\')/)) {
-      firstCharOfName = m[3].split('').reverse().pop().toUpperCase();
-      return name = firstCharOfName + m[3].slice(1, m[3].length);
+      view = ("module[" + m.index + "]__") + m[3];
     }
+    return view;
   };
 
 
@@ -59,14 +59,14 @@ Grammuelle.
    */
 
   capture_array = function(view) {
-    var m, v, z;
-    v = view.split('\n');
-    counter++;
-    if (m = view.match(/(\@include\s*(.*))/)) {
-      if (z = m[2].match(/(.*)\(\(/)) {
-        return z;
-      }
+    var m, q;
+    if (m = view.match(/(\@include\s*(.*)\(\()/)) {
+      view = ("response[" + m.index + "]__") + m[2];
     }
+    if (q = view.match(/^((.*)\-\-)(.*)/)) {
+      view = ("mq[" + q.index + "]__") + _.trim(q[0]);
+    }
+    return view;
   };
 
 
@@ -90,15 +90,10 @@ Grammuelle.
       }
     };
 
-    Parser.prototype.ready = function(view) {
-      var p;
-      return p = this.parsers.reduce(this.contract, view);
-    };
-
     Parser.prototype.parse = function(content) {
       var c, list, view;
       c = content.split("\n");
-      return list = _.filter((function() {
+      list = (function() {
         var j, len, results;
         results = [];
         for (j = 0, len = c.length; j < len; j++) {
@@ -106,7 +101,14 @@ Grammuelle.
           results.push(this.ready(view));
         }
         return results;
-      }).call(this));
+      }).call(this);
+      log(list);
+      return list;
+    };
+
+    Parser.prototype.ready = function(view) {
+      var p;
+      return p = this.parsers.reduce(this.contract, view);
     };
 
     return Parser;
@@ -138,7 +140,7 @@ Grammuelle.
   Grammuelle = (function() {
     var p;
 
-    p = new Parser([capture_module]);
+    p = new Parser([capture_module, capture_array]);
 
     function Grammuelle() {
       this.schema = null;
@@ -152,10 +154,11 @@ Grammuelle.
       return open().then(function(data) {
         var parseMap, psb;
         psb = p.parse(data);
+        log(psb);
         parseMap = _.map(psb, function(d) {
           return new Operation(d);
         });
-        _.each(parseMap, function(q, i) {
+        return _.each(parseMap, function(q, i) {
           if (this.schema.match(/%%SCSS_NAME%%/)) {
             this.schema = this.schema.replace(/%%SCSS_NAME%%/g, q.op);
             return this.done = _.remove(parseMap, function(n) {
@@ -165,7 +168,6 @@ Grammuelle.
             return this.schema = this.schema.replace(/%%SCSS_INNER%%/g, q.op);
           }
         });
-        return log(this.schema);
       });
     };
 
