@@ -1,9 +1,9 @@
 class ModelP
-  class Header
+  class ModelP
     constructor: () ->
   constructor: () ->
     @render()
   render: () ->
-    @header = new Header
+    @header = new ModelP
     return
 module.exports = ModelP

@@ -100,11 +100,8 @@ class Grammuelle
 
   constructor: () ->
 
-  getModules: () ->
-    @generate()
-    @el
-
   generate: () ->
+    defer = __q__()
 
     open().then (data) ->
       psb = p.parse data
@@ -117,57 +114,66 @@ class Grammuelle
           privateClassPosition = 2
           dirtyName = c[2]
           if h is classPosition
-            newModuleName = dirtyName.capitalize()
+            newModuleName = dirtyName and dirtyName.capitalize()
             opname = newModuleName
           if h is privateClassPosition
-            newComponentName = dirtyName.toLowerCase()
+            newComponentName = dirtyName and dirtyName.toLowerCase()
             opname = newComponentName
         opname: opname
         oppos: h
 
-      _.each parseMap, (q, i) ->
-        filename = null
-        ankh = null
-        classPosition = 0
-        privateClassPosition = 2
+      some = (obj) ->
+        defer = __q__()
+        defer.resolve obj
+        defer.promise
 
-        open('./stylebook.grams').then (grams) ->
-          ankh = grams
+      oldgrams = null
+      open('./stylebook.grams').then (grams) ->
+        z = _.remove parseMap, (a) -> a.opname
+        oldname = null
+        obj = {}
+        _.each z, (o) ->
+          if o.oppos is 0
+            obj[o.opname] = {}
+            oldname = o.opname
+          else
+            obj[oldname][o.opname] = {}
+
+        _.each obj, (a, i) ->
+          key = i
+          sub = a
 
           NAME = /%%SCSS_NAME%%/
           NAME_SCOPE = /%%SCSS_NAME%%/g
+          named = grams.match NAME
+          ankh = grams.replace(NAME_SCOPE, key)
+
           INNER = /%%SCSS_INNER%%/
           INNER_SCOPE = /%%SCSS_INNER%%/g
+          inner = grams.match INNER
+          ankh = ankh.replace(INNER_SCOPE, _.keys(a).join('').capitalize())
+
           INIT = /%%SCSS_INIT_INNER%%/
           INIT_SCOPE = /%%SCSS_INIT_INNER%%/g
-          inner = grams.match INNER
           init = grams.match INIT
-          named = grams.match NAME
+          ankh = ankh.replace(INIT_SCOPE, _.keys(a))
 
-          if init and q.oppos is privateClassPosition
-            ankh = ankh.replace(INIT_SCOPE, q.opname)
+          defer.resolve
+            filename: key
+            schema: ankh
 
-          if inner
-            newPrivateClassName = q.opname.capitalize()
-            ankh = ankh.replace(INNER_SCOPE, newPrivateClassName)
-
-          if named
-            ankh = ankh.replace(NAME_SCOPE, q.opname)
-            filename = q.opname
-
-          schema   : ankh
-          filename : filename
-
-    return
+    defer.promise
 
 g = new Grammuelle
 
-  #pathbase = './'
-  #ext = '.coffee'
-  #filepath = (pathbase + output.filename + ext)
-  #inputdata = output.schema
-  #__fs__.writeFile filepath, inputdata, (error) =>
-    #if error? then return log(error)
-    #else log "Saved #{output.filename}"
+g.generate().then (output) ->
+  return
+  pathbase = './'
+  ext = '.coffee'
+  filepath = (pathbase + output.filename + ext)
+  inputdata = output.schema
+  __fs__.writeFile filepath, inputdata, (error) =>
+    if error? then return log(error)
+    else log "Saved #{output.filename}"
 
 

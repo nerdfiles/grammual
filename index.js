@@ -151,14 +151,11 @@ Grammuelle.
 
     function Grammuelle() {}
 
-    Grammuelle.prototype.getModules = function() {
-      this.generate();
-      return this.el;
-    };
-
     Grammuelle.prototype.generate = function() {
+      var defer;
+      defer = __q__();
       open().then(function(data) {
-        var el, parseMap, psb;
+        var oldgrams, parseMap, psb, some;
         psb = p.parse(data);
         parseMap = _.filter(_.map(psb, function(d) {
           var c, classPosition, dirtyName, h, newComponentName, newModuleName, opname, privateClassPosition;
@@ -169,11 +166,11 @@ Grammuelle.
             privateClassPosition = 2;
             dirtyName = c[2];
             if (h === classPosition) {
-              newModuleName = dirtyName.capitalize();
+              newModuleName = dirtyName && dirtyName.capitalize();
               opname = newModuleName;
             }
             if (h === privateClassPosition) {
-              newComponentName = dirtyName.toLowerCase();
+              newComponentName = dirtyName && dirtyName.toLowerCase();
               opname = newComponentName;
             }
           }
@@ -182,46 +179,52 @@ Grammuelle.
             oppos: h
           };
         }));
-        el = [];
-        _.each(parseMap, function(q, i) {
-          var ankh, classPosition, filename, privateClassPosition;
-          filename = null;
-          ankh = null;
-          classPosition = 0;
-          privateClassPosition = 2;
-          open('./stylebook.grams').then(function(grams) {
-            var INIT, INIT_SCOPE, INNER, INNER_SCOPE, NAME, NAME_SCOPE, defer, init, inner, named, newPrivateClassName;
-            defer = __q__();
-            ankh = grams;
+        some = function(obj) {
+          defer = __q__();
+          defer.resolve(obj);
+          return defer.promise;
+        };
+        oldgrams = null;
+        return open('./stylebook.grams').then(function(grams) {
+          var obj, oldname, z;
+          z = _.remove(parseMap, function(a) {
+            return a.opname;
+          });
+          oldname = null;
+          obj = {};
+          _.each(z, function(o) {
+            if (o.oppos === 0) {
+              obj[o.opname] = {};
+              return oldname = o.opname;
+            } else {
+              return obj[oldname][o.opname] = {};
+            }
+          });
+          return _.each(obj, function(a, i) {
+            var INIT, INIT_SCOPE, INNER, INNER_SCOPE, NAME, NAME_SCOPE, ankh, init, inner, key, named, sub;
+            key = i;
+            sub = a;
             NAME = /%%SCSS_NAME%%/;
             NAME_SCOPE = /%%SCSS_NAME%%/g;
+            named = grams.match(NAME);
+            ankh = grams.replace(NAME_SCOPE, key);
             INNER = /%%SCSS_INNER%%/;
             INNER_SCOPE = /%%SCSS_INNER%%/g;
+            inner = grams.match(INNER);
+            ankh = ankh.replace(INNER_SCOPE, _.keys(a).join('').capitalize());
             INIT = /%%SCSS_INIT_INNER%%/;
             INIT_SCOPE = /%%SCSS_INIT_INNER%%/g;
-            inner = grams.match(INNER);
             init = grams.match(INIT);
-            named = grams.match(NAME);
-            if (init && q.oppos === privateClassPosition) {
-              ankh = ankh.replace(INIT_SCOPE, q.opname);
-            }
-            if (inner) {
-              newPrivateClassName = q.opname.capitalize();
-              ankh = ankh.replace(INNER_SCOPE, newPrivateClassName);
-            }
-            if (named) {
-              ankh = ankh.replace(NAME_SCOPE, q.opname);
-              filename = q.opname;
-            }
+            ankh = ankh.replace(INIT_SCOPE, _.keys(a));
+            log(ankh);
             return defer.resolve({
-              schema: ankh,
-              filename: filename
+              filename: key,
+              schema: ankh
             });
           });
-          return el.push(defer.promise);
         });
-        return log(el);
       });
+      return defer.promise;
     };
 
     return Grammuelle;
@@ -229,5 +232,23 @@ Grammuelle.
   })();
 
   g = new Grammuelle;
+
+  g.generate().then(function(output) {
+    var ext, filepath, inputdata, pathbase;
+    return;
+    pathbase = './';
+    ext = '.coffee';
+    filepath = pathbase + output.filename + ext;
+    inputdata = output.schema;
+    return __fs__.writeFile(filepath, inputdata, (function(_this) {
+      return function(error) {
+        if (error != null) {
+          return log(error);
+        } else {
+          return log("Saved " + output.filename);
+        }
+      };
+    })(this));
+  });
 
 }).call(this);
