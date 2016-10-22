@@ -9,8 +9,26 @@ __q__ = require('promise-defer')
 log = console.log
 _ = require('lodash')
 
+
+###
+@internal
+@name int
+###
 String::int = () ->
   parseInt @, 10
+
+###
+@internal
+@name capitalize
+###
+String::capitalize = () ->
+  capitalizedFirstCharOfName = @split('')
+    .reverse()
+    .pop()
+    .toUpperCase()
+  firstCharRemoved = @slice(1, @length)
+  (capitalizedFirstCharOfName + firstCharRemoved)
+
 
 ###
 @name open
@@ -99,12 +117,7 @@ class Grammuelle
           privateClassPosition = 2
           dirtyName = c[2]
           if h is classPosition and dirtyName
-            capitalizedFirstCharOfName = dirtyName.split('')
-              .reverse()
-              .pop()
-              .toUpperCase()
-            firstCharRemoved = dirtyName.slice(1, dirtyName.length)
-            newModuleName = (capitalizedFirstCharOfName + firstCharRemoved)
+            newModuleName = dirtyName.capitalize()
             opname = newModuleName
           if h is privateClassPosition and dirtyName
             newComponentName = dirtyName.toLowerCase()
@@ -127,12 +140,7 @@ class Grammuelle
           @filename = q
         else if inner or init
           if inner
-            capitalizedFirstCharOfName = q.split('')
-              .reverse()
-              .pop()
-              .toUpperCase()
-            firstCharRemoved = q.slice(1, q.length)
-            newPrivateClassName = (capitalizedFirstCharOfName + firstCharRemoved)
+            newPrivateClassName = q.capitalize()
             @schema = @schema.replace(INNER_SCOPE, newPrivateClassName)
           @schema = @schema.replace(INIT_SCOPE, q)
 
