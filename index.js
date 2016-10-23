@@ -7,7 +7,7 @@ Grammuelle.
  */
 
 (function() {
-  var Grammuelle, Operation, P, Parser, _, __fs__, __q__, async, capture_module, g, log, open;
+  var Grammuelle, Operation, P, Parser, _, __fs__, __q__, async, capture_module, colors, g, log, open;
 
   __fs__ = require('fs');
 
@@ -20,6 +20,8 @@ Grammuelle.
   _ = require('lodash');
 
   async = require('async');
+
+  colors = require('colors');
 
 
   /*
@@ -152,8 +154,9 @@ Grammuelle.
     function Grammuelle() {}
 
     Grammuelle.prototype.generate = function() {
-      var defer;
+      var defer, el;
       defer = __q__();
+      el = [];
       open().then(function(data) {
         var oldgrams, parseMap, psb, some;
         psb = p.parse(data);
@@ -200,7 +203,7 @@ Grammuelle.
               return obj[oldname][o.opname] = {};
             }
           });
-          return _.each(obj, function(a, i) {
+          _.each(obj, function(a, i) {
             var INIT, INIT_SCOPE, INNER, INNER_SCOPE, NAME, NAME_SCOPE, ankh, init, inner, key, named, sub;
             key = i;
             sub = a;
@@ -216,12 +219,12 @@ Grammuelle.
             INIT_SCOPE = /%%SCSS_INIT_INNER%%/g;
             init = grams.match(INIT);
             ankh = ankh.replace(INIT_SCOPE, _.keys(a));
-            log(ankh);
-            return defer.resolve({
+            return el.push({
               filename: key,
               schema: ankh
             });
           });
+          return defer.resolve(el);
         });
       });
       return defer.promise;
@@ -234,21 +237,21 @@ Grammuelle.
   g = new Grammuelle;
 
   g.generate().then(function(output) {
-    var ext, filepath, inputdata, pathbase;
-    return;
+    var ext, pathbase;
     pathbase = './';
     ext = '.coffee';
-    filepath = pathbase + output.filename + ext;
-    inputdata = output.schema;
-    return __fs__.writeFile(filepath, inputdata, (function(_this) {
-      return function(error) {
+    return _.each(output, function(o, i) {
+      var filepath, inputdata;
+      filepath = pathbase + o.filename + ext;
+      inputdata = o.schema;
+      return __fs__.writeFile(filepath, inputdata, function(error) {
         if (error != null) {
           return log(error);
         } else {
-          return log("Saved " + output.filename);
+          return log(("Saved " + o.filename + ".coffee").rainbow);
         }
-      };
-    })(this));
+      });
+    });
   });
 
 }).call(this);

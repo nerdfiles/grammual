@@ -10,6 +10,7 @@ P = require('promise')
 log = console.log
 _ = require('lodash')
 async = require('async')
+colors = require('colors')
 
 ###
 @internal
@@ -102,6 +103,7 @@ class Grammuelle
 
   generate: () ->
     defer = __q__()
+    el = []
 
     open().then (data) ->
       psb = p.parse data
@@ -158,22 +160,25 @@ class Grammuelle
           init = grams.match INIT
           ankh = ankh.replace(INIT_SCOPE, _.keys(a))
 
-          defer.resolve
+          el.push
             filename: key
             schema: ankh
+        defer.resolve el
 
     defer.promise
 
 g = new Grammuelle
 
 g.generate().then (output) ->
-  return
+
   pathbase = './'
   ext = '.coffee'
-  filepath = (pathbase + output.filename + ext)
-  inputdata = output.schema
-  __fs__.writeFile filepath, inputdata, (error) =>
-    if error? then return log(error)
-    else log "Saved #{output.filename}"
+
+  _.each output, (o, i) ->
+    filepath = (pathbase + o.filename + ext)
+    inputdata = o.schema
+    __fs__.writeFile filepath, inputdata, (error) ->
+      if error? then return log(error)
+      else log "Saved #{o.filename}.coffee".rainbow
 
 

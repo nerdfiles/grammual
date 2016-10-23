@@ -1,4 +1,4 @@
-class ModelP
+class CatModel
   class Header
     constructor: () ->
   constructor: () ->
@@ -6,4 +6,4 @@ class ModelP
   render: () ->
     @header = new Header
     return
-module.exports = ModelP
+module.exports = CatModel
