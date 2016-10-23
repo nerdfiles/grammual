@@ -1,0 +1,14 @@
+log=console.log
+error_css = require('error_css')
+__q__ = require('promise-defer')
+# @param {object} .ELEM()
+module.exports = (promisedModule) ->
+  defer = __q__()
+  promisedModule['%%SCSS_WHEN%%']().then ((error, css) ->
+    if error? then return log error
+    log css
+    defer.resolve css
+  , (err) ->
+    log error_css
+    defer.reject error_css
+  )
