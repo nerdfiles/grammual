@@ -124,11 +124,6 @@ class Grammuelle
         opname: opname
         oppos: h
 
-      some = (obj) ->
-        defer = __q__()
-        defer.resolve obj
-        defer.promise
-
       oldgrams = null
       open('./stylebook.grams').then (grams) ->
         z = _.remove parseMap, (a) -> a.opname
