@@ -1,5 +1,5 @@
 log=console.log
-error_css = require('error_css')
+error_css = require('./error_css')
 __q__ = require('promise-defer')
 # @param {object} .ELEM()
 module.exports = (promisedModule) ->
