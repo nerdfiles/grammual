@@ -2,8 +2,8 @@
   @extend %banner;
 }
 
-@include Do('modelP') {
-  @include Do('header') {
+@include Do('SiteHeader__GlobalHeader') {
+  @include Do('sectionHeader') {
     @include Responses((
       banner--print,
     )) {
@@ -12,12 +12,4 @@
   }
 }
 
-@include Do('catModel') {
-  @include Do('header') {
-    @include Responses((
-      banner--print,
-    )) {
-      background: purple;
-    }
-  }
-}
+

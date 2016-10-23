@@ -60,12 +60,12 @@ capture_module = (view) ->
 
 ###
 @class
-@name Parser
+@name Lexer
 @description
-Parser Contract Loader.
+Lexer Contract Loader.
 ###
 
-class Parser
+class Lexer
   constructor: (@parsers) ->
 
   contract: (loaded, parser) ->
@@ -97,7 +97,7 @@ class Operation
 
 class Grammuelle
 
-  p = new Parser [capture_module]
+  p = new Lexer [capture_module]
 
   constructor: () ->
 
