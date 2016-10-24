@@ -130,11 +130,12 @@ class Grammuelle
         oldname = null
         obj = {}
         _.each z, (o) ->
-          if o.oppos is 0
-            obj[o.opname] = {}
-            oldname = o.opname
-          else
-            obj[oldname][o.opname] = {}
+          if o.hasOwnProperty('oppos')
+            if o.oppos is 0
+              obj[o.opname] = {}
+              oldname = o.opname
+            else
+              obj[oldname][o.opname] = {}
 
         _.each obj, (a, i) ->
           key = i

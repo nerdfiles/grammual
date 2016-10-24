@@ -7,7 +7,7 @@ Grammuelle.
  */
 
 (function() {
-  var Grammuelle, Operation, P, Parser, _, __fs__, __q__, async, capture_module, colors, g, log, open;
+  var Grammuelle, Lexer, Operation, P, _, __fs__, __q__, async, capture_module, colors, g, log, open;
 
   __fs__ = require('fs');
 
@@ -83,17 +83,17 @@ Grammuelle.
 
   /*
   @class
-  @name Parser
+  @name Lexer
   @description
-  Parser Contract Loader.
+  Lexer Contract Loader.
    */
 
-  Parser = (function() {
-    function Parser(parsers) {
+  Lexer = (function() {
+    function Lexer(parsers) {
       this.parsers = parsers;
     }
 
-    Parser.prototype.contract = function(loaded, parser) {
+    Lexer.prototype.contract = function(loaded, parser) {
       if (parser) {
         return parser(loaded || '');
       } else {
@@ -101,7 +101,7 @@ Grammuelle.
       }
     };
 
-    Parser.prototype.parse = function(content) {
+    Lexer.prototype.parse = function(content) {
       var c, list, view;
       c = content.split("\n");
       return list = (function() {
@@ -115,12 +115,12 @@ Grammuelle.
       }).call(this);
     };
 
-    Parser.prototype.ready = function(view) {
+    Lexer.prototype.ready = function(view) {
       var p;
       return p = this.parsers.reduce(this.contract, view);
     };
 
-    return Parser;
+    return Lexer;
 
   })();
 
@@ -149,7 +149,7 @@ Grammuelle.
   Grammuelle = (function() {
     var p;
 
-    p = new Parser([capture_module]);
+    p = new Lexer([capture_module]);
 
     function Grammuelle() {}
 
@@ -158,7 +158,7 @@ Grammuelle.
       defer = __q__();
       el = [];
       open().then(function(data) {
-        var oldgrams, parseMap, psb, some;
+        var oldgrams, parseMap, psb;
         psb = p.parse(data);
         parseMap = _.filter(_.map(psb, function(d) {
           var c, classPosition, dirtyName, h, newComponentName, newModuleName, opname, privateClassPosition;
@@ -182,11 +182,6 @@ Grammuelle.
             oppos: h
           };
         }));
-        some = function(obj) {
-          defer = __q__();
-          defer.resolve(obj);
-          return defer.promise;
-        };
         oldgrams = null;
         return open('./stylebook.grams').then(function(grams) {
           var obj, oldname, z;
@@ -196,11 +191,13 @@ Grammuelle.
           oldname = null;
           obj = {};
           _.each(z, function(o) {
-            if (o.oppos === 0) {
-              obj[o.opname] = {};
-              return oldname = o.opname;
-            } else {
-              return obj[oldname][o.opname] = {};
+            if (o.hasOwnProperty('oppos')) {
+              if (o.oppos === 0) {
+                obj[o.opname] = {};
+                return oldname = o.opname;
+              } else {
+                return obj[oldname][o.opname] = {};
+              }
             }
           });
           _.each(obj, function(a, i) {
